@@ -1,9 +1,4 @@
 <?php
-
-/* SCRIPTS QUEUE */
-wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/scripts/jquery.min.js', false, '3.3.1', 'all' );
-wp_enqueue_script( 'Main-js', get_template_directory_uri() . '/assets/scripts/custom.js' );
-
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php') ) . '</a></p></div>';
