@@ -1,8 +1,5 @@
 <?php
 
-/* STYLES QUEUE */
-wp_enqueue_style( 'Main-css', get_stylesheet_directory_uri() . '/assets/styles/custom/custom.css', false, '4.1.0', 'all' );
-
 /* SCRIPTS QUEUE */
 wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/scripts/jquery.min.js', false, '3.3.1', 'all' );
 wp_enqueue_script( 'Main-js', get_template_directory_uri() . '/assets/scripts/custom.js' );
