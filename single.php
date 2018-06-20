@@ -12,12 +12,14 @@
 include( 'utilities.php' );
 $utils = new Utilities();
 
-$context = Timber::get_context();
 $post = Timber::query_post();
+$context = Timber::get_context();
 $context['post'] = $post;
+
+include( 'includes/posts/' . $post->post_name . '.php' );
 
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {
-	Timber::render( array( 'posts/single-' . $post->ID . '.twig', 'posts/single-' . $post->post_type . '.twig', 'single.twig' ), $context );
+	Timber::render( array( 'posts/' . $post->ID . '.twig', 'posts/single-' . $post->post_type . '.twig', 'single.twig' ), $context );
 }

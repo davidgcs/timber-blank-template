@@ -24,7 +24,11 @@
 include( 'utilities.php' );
 $utils = new Utilities();
 
-$context = Timber::get_context();
 $post = new TimberPost();
+$context = Timber::get_context();
 $context['post'] = $post;
-Timber::render( array( 'pages/page-' . $post->post_name . '.twig', 'page.twig' ), $context );
+
+include( 'includes/pages/' . $post->post_name . '.php' );
+
+print_r($context);
+Timber::render( array( 'pages/' . $post->post_name . '.twig', 'page.twig' ), $context );
