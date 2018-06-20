@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% for row in acf.custom_page_content %}
+        {% if row.acf_fc_layout == "image_text_fullcenter" %}
+            <div class="image_text_fullcenter" style="background-image: url('#{row.image.url}')">
+            </div>
+        {% endif %}        
+    {% endfor %}
+{% endblock %}
