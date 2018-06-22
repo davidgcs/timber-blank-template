@@ -1,4 +1,94 @@
 @import "../bootstrap/scss/bootstrap";
 
+
+$filter: rgba(0,0,0,.5);
+$tooltip-bg: rgba(255, 255, 255, .8);
+
+$white: #FFF;
+$white-d: #F6F7FA;
+$grey-l: #E5E8ED;
+$grey: #A2A2AA;
+$grey-d: #6D6F79;
+$black-l: #343435;
+$red: #C40C0C;
+
+$fthin: 100;
+$fextra-light: 200;
+$flight: 300;
+$fregular: 400;
+$fmedium: 500;
+$fsemi-bold: 600;
+$fbold: 700;
+$fextra-bold: 800;
+$fblack: 900;
+
+$raleway: 'Raleway', sans-serif;
+
+h1{
+  font: $fblack 32px $raleway;
+  color: $black-l;
+}
+
+h2{
+  font: $fblack 26px $raleway;
+  color: $black-l;
+}
+
+h3{
+  font: $fbold 26px $raleway;
+  color: $black-l;
+}
+
+h4{
+  font: $fmedium 18px $raleway;
+  color: $black-l;
+}
+
+h5{
+  font: $fextra-bold 13px $raleway;
+  color: $grey-d;
+}
+
+.custom-header{
+  font: $fextra-bold 13px $raleway;
+  color: $grey-d;
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+    color: $grey;
+  }
+}
+
+.custom-header.strong{
+  font: $fextra-bold 13px $raleway;
+  color: $black-l;
+}
+
+.custom-main-submenu{
+  font: $fextra-bold 16px $raleway;
+  color: $black-l;
+}
+
+.custom-secondary-submenu{
+  font: $fsemi-bold 14px $raleway;
+  color: $grey-d;
+}
+
+.custom-breadcrumbs{
+  font: $fmedium 15px $raleway;
+  color: $grey-d;
+}
+
+.custom-secondary-submenu{
+  font: $fmedium 16px $raleway;
+  color: $black-l;
+  line-height: 26px;
+}
+
+.c-white{color: $white;}
+
+/* Partials */
+@import "partials/header";
+@import "partials/footer";
 /* Pages */
 @import "./pages/main";

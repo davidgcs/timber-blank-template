@@ -1,0 +1,43 @@
+<div class="wrapper">
+    <div class="container d-flex justify-content-between">
+        <div class="hdr-logo my-auto" role="banner">
+            <a class="hdr-logo-link" href="{{site.url}}" rel="home">
+                <img src="{{ theme.link }}/assets/images/logo.png" alt="Macmillan Education">
+            </a>
+        </div>
+        <div class="tools-area d-flex flex-column">
+            <div class="tools-area-row mt-4 d-flex justify-content-center">
+                <a href="#" class="corner-btn w-100 mr-1 px-2 py-2 d-flex custom-header"><span class="m-auto">Teacher's corner</span></a>
+                <a href="#" class="corner-btn w-100 ml-1 px-2 py-2 d-flex custom-header"><span class="m-auto">Pupil's corner</span></a>
+            </div>
+            <div class="tools-area-row mt-4 d-flex justify-content-center">
+                <div class="tool-btn p-3">
+                    <span class="icon-search"></span>
+                </div>
+                <div class="tool-btn p-3">
+                    <span class="icon-basket"></span>
+                </div>
+                <div class="tool-btn p-3">
+                    <span class="icon-user"></span>
+                </div>
+                {# Advantage #}
+                <div class="tool-btn p-3">
+                    <span class="icon-search"></span>
+                </div>
+                {# Selector de idioma #}
+                <div class="tool-btn p-3">
+                    <span class="icon-search"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="menu">
+    <div class="container">
+        {% block menu %}
+            <nav id="nav-main" class="nav-main" role="navigation">
+                {% include "menu.twig" with {'menu': menu.header.get_items} %}
+            </nav><!-- #nav -->
+        {% endblock %}
+    </div>
+</div>

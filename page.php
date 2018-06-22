@@ -28,7 +28,10 @@ $post = new TimberPost();
 $context = Timber::get_context();
 $context['post'] = $post;
 
-include( 'includes/pages/' . $post->post_name . '.php' );
+include( 'includes/globals.php');
 
-print_r($context);
+if(file_exists(get_template_directory().'/includes/pages/' . $post->post_name . '.php')){
+    include( 'includes/pages/' . $post->post_name . '.php' );
+}
+
 Timber::render( array( 'pages/' . $post->post_name . '.twig', 'page.twig' ), $context );

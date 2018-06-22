@@ -1,0 +1,33 @@
+footer{
+  .footer-upper{
+    background-color: $grey;
+    .inner-container{
+      padding: 50px 150px;
+      .menu-icons{
+        &:first-of-type{
+          margin-right: 20px;
+        }
+        &:last-of-type{
+          margin-left: 20px;
+        }
+        .menu-title{
+          border-bottom: 1px solid $white;
+          color: $white;
+        }
+      }
+    }
+  }
+  .footer-bottom{
+    background-color: $grey-d;
+  }
+  ul{
+    display: flex;
+    justify-content: space-between;
+    li{
+      a{
+        color: $white !important;
+      }
+    }
+  }
+
+}

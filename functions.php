@@ -1,4 +1,13 @@
 <?php
+
+register_nav_menus( array(
+    'main'                  => __( 'main', 'Macmillan' ),
+    'footer-social-left'    => __( 'Footer social left', 'Macmillan' ),
+    'footer-social-right'   => __( 'Footer social right', 'Macmillan' ),
+    'footer-top'            => __( 'Footer top', 'Macmillan' ),
+    'footer-bottom'         => __( 'Footer bottom', 'Macmillan' )
+) );
+
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php') ) . '</a></p></div>';

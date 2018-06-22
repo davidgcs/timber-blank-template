@@ -1,0 +1,34 @@
+header{
+  .wrapper{
+    border-bottom: 2px solid $grey-l;
+    .container{margin-bottom: -1px;}
+    .hdr-logo{
+      img{
+        width: 250px;
+      }
+    }
+    .tools-area{
+      .tools-area-row{
+        .corner-btn{
+          border: 2px solid $grey-d;
+          text-decoration: none;
+          &:hover{text-decoration: none;}
+        }
+        .tool-btn{
+          cursor: pointer;
+          border-left: 2px solid $grey-l;
+          border-top: 2px solid $grey-l;
+          &:hover{
+            color: $grey;
+          }
+          &:last-of-type{
+            border-right: 2px solid $grey-l;
+          }
+        }
+      }
+    }
+  }
+  #menu{
+
+  }
+}

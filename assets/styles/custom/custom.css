@@ -6738,7 +6738,6 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #dee2e6 !important; }
 
-  
   .table-dark {
     color: inherit; }
     .table-dark th,
@@ -6750,9 +6749,141 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+h1 {
+  font: 900 32px "Raleway", sans-serif;
+  color: #343435; }
+
+h2 {
+  font: 900 26px "Raleway", sans-serif;
+  color: #343435; }
+
+h3 {
+  font: 700 26px "Raleway", sans-serif;
+  color: #343435; }
+
+h4 {
+  font: 500 18px "Raleway", sans-serif;
+  color: #343435; }
+
+h5 {
+  font: 800 13px "Raleway", sans-serif;
+  color: #6D6F79; }
+
+.custom-header {
+  font: 800 13px "Raleway", sans-serif;
+  color: #6D6F79;
+  text-decoration: none; }
+  .custom-header:hover {
+    text-decoration: none;
+    color: #A2A2AA; }
+
+.custom-header.strong {
+  font: 800 13px "Raleway", sans-serif;
+  color: #343435; }
+
+.custom-main-submenu {
+  font: 800 16px "Raleway", sans-serif;
+  color: #343435; }
+
+.custom-secondary-submenu {
+  font: 600 14px "Raleway", sans-serif;
+  color: #6D6F79; }
+
+.custom-breadcrumbs {
+  font: 500 15px "Raleway", sans-serif;
+  color: #6D6F79; }
+
+.custom-secondary-submenu {
+  font: 500 16px "Raleway", sans-serif;
+  color: #343435;
+  line-height: 26px; }
+
+.c-white {
+  color: #FFF; }
+
+/* Partials */
+header .wrapper {
+  border-bottom: 2px solid #E5E8ED; }
+  header .wrapper .container {
+    margin-bottom: -1px; }
+  header .wrapper .hdr-logo img {
+    width: 250px; }
+  header .wrapper .tools-area .tools-area-row .corner-btn {
+    border: 2px solid #6D6F79;
+    text-decoration: none; }
+    header .wrapper .tools-area .tools-area-row .corner-btn:hover {
+      text-decoration: none; }
+  header .wrapper .tools-area .tools-area-row .tool-btn {
+    cursor: pointer;
+    border-left: 2px solid #E5E8ED;
+    border-top: 2px solid #E5E8ED; }
+    header .wrapper .tools-area .tools-area-row .tool-btn:hover {
+      color: #A2A2AA; }
+    header .wrapper .tools-area .tools-area-row .tool-btn:last-of-type {
+      border-right: 2px solid #E5E8ED; }
+
+footer .footer-upper {
+  background-color: #A2A2AA; }
+  footer .footer-upper .inner-container {
+    padding: 50px 150px; }
+    footer .footer-upper .inner-container .menu-icons:first-of-type {
+      margin-right: 20px; }
+    footer .footer-upper .inner-container .menu-icons:last-of-type {
+      margin-left: 20px; }
+    footer .footer-upper .inner-container .menu-icons .menu-title {
+      border-bottom: 1px solid #FFF;
+      color: #FFF; }
+footer .footer-bottom {
+  background-color: #6D6F79; }
+footer ul {
+  display: flex;
+  justify-content: space-between; }
+  footer ul li a {
+    color: #FFF !important; }
+
 /* Pages */
 body.page.home .image_text_fullcenter {
   width: 100%;
-  height: 500px; }
+  height: 500px;
+  background-size: 100%;
+  background-position: center; }
+  body.page.home .image_text_fullcenter .filter {
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0; }
+  body.page.home .image_text_fullcenter .textContainer {
+    position: relative;
+    z-index: 5; }
+    body.page.home .image_text_fullcenter .textContainer .title {
+      text-transform: uppercase; }
+body.page.home .section_title .title {
+  text-transform: uppercase; }
+body.page.home .image_text_tooltip {
+  overflow: auto; }
+  body.page.home .image_text_tooltip .custom-card {
+    float: left; }
+    body.page.home .image_text_tooltip .custom-card.size-4x4 {
+      width: 100%;
+      height: 500px; }
+    body.page.home .image_text_tooltip .custom-card.size-4x2 {
+      width: 100%;
+      height: 250px; }
+    body.page.home .image_text_tooltip .custom-card.size-2x4 {
+      width: 50%;
+      height: 500px; }
+    body.page.home .image_text_tooltip .custom-card.size-2x2 {
+      width: 50%;
+      height: 250px; }
+    body.page.home .image_text_tooltip .custom-card .tooltipContainer {
+      width: 100%;
+      height: 100%;
+      background-size: 100%;
+      background-position: center; }
+      body.page.home .image_text_tooltip .custom-card .tooltipContainer .tooltip {
+        background-color: rgba(255, 255, 255, 0.8);
+        opacity: 1; }
+body.page.home .image_text_down .custom-block img {
+  width: 100%;
+  object-fit: cover; }
 
 /*# sourceMappingURL=custom.css.map */

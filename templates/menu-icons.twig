@@ -1,0 +1,13 @@
+{% if menu %}
+	<div class="menu-icons d-flex flex-column w-100">
+		<div class="menu-title custom-header text-uppercase text-center">{{ title }}</div>
+		<ul class="p-0 mb-0 d-flex justify-content-center">
+            {% for item in menu %}
+				<li class="{{ item.classes | join(' ') }} d-inline-block py-3">
+					<a target="{{ item.target }}" href="{{ item.link }}" class="d-block {% if loop.first %}pl-0 pt-3 pr-3 pb-3{% elseif loop.last %} pl-3 pt-3 pr-0 pb-3 {% else %}p-3{% endif %}"><span class="icon-{{ item.title|lower }} d-block text-center"></span>{{ item.title }}</a>
+                    {% include "menu.twig" with {'menu': item.get_children} %}
+				</li>
+            {% endfor %}
+		</ul>
+	</div>
+{% endif %}
