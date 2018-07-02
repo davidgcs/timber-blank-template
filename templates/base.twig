@@ -17,7 +17,61 @@
 			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<div class="wrapper {{sidebar_class}}">
 				{% block content %}
-					Sorry, no content
+					{#Sorry, no content#}
+					<div class="container">
+                        {% for row in acf.custom_page_content %}
+                            {% if row.acf_fc_layout == "image_text_fullcenter" %}
+								<div class="image_text_fullcenter d-flex position-relative my-5" style="background-image: url('{{row.image.url}}');">
+									<div class="filter position-absolute w-100 h-100"></div>
+									<div class="textContainer m-auto text-center">
+										<h1 class="title c-white">{{ row.title }}</h1>
+										<p class="subtitle c-white">{{ row.subtitle }}</p>
+									</div>
+								</div>
+                            {% endif %}
+
+                            {% if row.acf_fc_layout == "breadcrumbs" %}
+                                {{ function('do_shortcode', '[wpseo_breadcrumb]') }}
+                            {% endif %}
+
+                            {% if row.acf_fc_layout == "section_title" %}
+								<div class="section_title my-5">
+									<h2 class="title">{{ row.title }}</h2>
+									<p class="subtitle">{{ row.subtitle }}</p>
+								</div>
+                            {% endif %}
+
+                            {% if row.acf_fc_layout == "image_text_tooltip" %}
+								<div class="image_text_tooltip w-100 h-auto my-5">
+                                    {% for c in row.card %}
+										<div class="custom-card position-relative p-2 size-{{c.size}}">
+											<div class="tooltipContainer d-flex" style="background-image: url('{{c.image.url}}');">
+												<div class="tooltip position-relative mr-auto my-auto ml-5 p-4">
+													<h3 class="title">{{ c.title }}</h3>
+													<p class="description">{{ c.description }}</p>
+												</div>
+											</div>
+										</div>
+                                    {% endfor %}
+								</div>
+                            {% endif %}
+
+                            {% if row.acf_fc_layout == "image_text_down" %}
+								<div class="image_text_down w-100 h-auto my-5 d-flex">
+                                    {% for i in row.block %}
+										<div class="custom-block position-relative {% if loop.first and row.block|length > 1 %}pr-2{% elseif loop.last %}pl-2{% endif %}">
+											<img src="{{ i.image.url }}" alt="{{ i.image.alt }}" class="w-100">
+											<div class="textContainer position-relative py-4">
+												<h3 class="title">{{ i.title }}</h3>
+												<p class="description">{{ i.description }}</p>
+											</div>
+										</div>
+                                    {% endfor %}
+								</div>
+                            {% endif %}
+
+                        {% endfor %}
+					</div>
 				{% endblock %}
 			</div>
 			{% if sidebar %}

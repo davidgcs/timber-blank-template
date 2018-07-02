@@ -24,6 +24,39 @@ header{
           &:last-of-type{
             border-right: 2px solid $grey-l;
           }
+          &.btn-large{
+            width: 100px;
+            .icon-advantage{
+              &:hover{
+                color: rgba(196,12,12,.6);
+              }
+              &:before{
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 40px;
+                margin: 0;
+                width: 100px;
+                line-height: 40px;
+                font-size: 75px;
+              }
+            }
+          }
+          .language-select{
+            li{
+              display: none;
+              &.current{
+                display: block !important;
+              }
+            }
+          }
+          .language-icon{
+            width: 18px;
+            height: 18px;
+            object-fit: cover;
+            margin: auto 8px auto 4px;
+            border-radius: 200px;
+          }
         }
       }
     }

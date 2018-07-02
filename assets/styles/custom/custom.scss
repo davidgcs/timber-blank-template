@@ -86,9 +86,11 @@ h5{
 }
 
 .c-white{color: $white;}
+.c-red{color: $red;}
 
 /* Partials */
 @import "partials/header";
 @import "partials/footer";
+@import "partials/blocks";
 /* Pages */
 @import "./pages/main";

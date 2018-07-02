@@ -6801,6 +6801,9 @@ h5 {
 .c-white {
   color: #FFF; }
 
+.c-red {
+  color: #C40C0C; }
+
 /* Partials */
 header .wrapper {
   border-bottom: 2px solid #E5E8ED; }
@@ -6821,6 +6824,29 @@ header .wrapper {
       color: #A2A2AA; }
     header .wrapper .tools-area .tools-area-row .tool-btn:last-of-type {
       border-right: 2px solid #E5E8ED; }
+    header .wrapper .tools-area .tools-area-row .tool-btn.btn-large {
+      width: 100px; }
+      header .wrapper .tools-area .tools-area-row .tool-btn.btn-large .icon-advantage:hover {
+        color: rgba(196, 12, 12, 0.6); }
+      header .wrapper .tools-area .tools-area-row .tool-btn.btn-large .icon-advantage:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 40px;
+        margin: 0;
+        width: 100px;
+        line-height: 40px;
+        font-size: 75px; }
+    header .wrapper .tools-area .tools-area-row .tool-btn .language-select li {
+      display: none; }
+      header .wrapper .tools-area .tools-area-row .tool-btn .language-select li.current {
+        display: block !important; }
+    header .wrapper .tools-area .tools-area-row .tool-btn .language-icon {
+      width: 18px;
+      height: 18px;
+      object-fit: cover;
+      margin: auto 8px auto 4px;
+      border-radius: 200px; }
 
 footer .footer-upper {
   background-color: #A2A2AA; }
@@ -6841,49 +6867,53 @@ footer ul {
   footer ul li a {
     color: #FFF !important; }
 
-/* Pages */
-body.page.home .image_text_fullcenter {
+.image_text_fullcenter {
   width: 100%;
   height: 500px;
   background-size: 100%;
   background-position: center; }
-  body.page.home .image_text_fullcenter .filter {
+  .image_text_fullcenter .filter {
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0; }
-  body.page.home .image_text_fullcenter .textContainer {
+  .image_text_fullcenter .textContainer {
     position: relative;
     z-index: 5; }
-    body.page.home .image_text_fullcenter .textContainer .title {
+    .image_text_fullcenter .textContainer .title {
       text-transform: uppercase; }
-body.page.home .section_title .title {
+
+.section_title .title {
   text-transform: uppercase; }
-body.page.home .image_text_tooltip {
+
+.image_text_tooltip {
   overflow: auto; }
-  body.page.home .image_text_tooltip .custom-card {
+  .image_text_tooltip .custom-card {
     float: left; }
-    body.page.home .image_text_tooltip .custom-card.size-4x4 {
+    .image_text_tooltip .custom-card.size-4x4 {
       width: 100%;
       height: 500px; }
-    body.page.home .image_text_tooltip .custom-card.size-4x2 {
+    .image_text_tooltip .custom-card.size-4x2 {
       width: 100%;
       height: 250px; }
-    body.page.home .image_text_tooltip .custom-card.size-2x4 {
+    .image_text_tooltip .custom-card.size-2x4 {
       width: 50%;
       height: 500px; }
-    body.page.home .image_text_tooltip .custom-card.size-2x2 {
+    .image_text_tooltip .custom-card.size-2x2 {
       width: 50%;
       height: 250px; }
-    body.page.home .image_text_tooltip .custom-card .tooltipContainer {
+    .image_text_tooltip .custom-card .tooltipContainer {
       width: 100%;
       height: 100%;
       background-size: 100%;
       background-position: center; }
-      body.page.home .image_text_tooltip .custom-card .tooltipContainer .tooltip {
+      .image_text_tooltip .custom-card .tooltipContainer .tooltip {
         background-color: rgba(255, 255, 255, 0.8);
         opacity: 1; }
-body.page.home .image_text_down .custom-block img {
+
+.image_text_down .custom-block img {
   width: 100%;
   object-fit: cover; }
+
+/* Pages */
 
 /*# sourceMappingURL=custom.css.map */
