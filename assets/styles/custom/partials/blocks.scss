@@ -11,10 +11,26 @@
   .textContainer{
     position: relative;
     z-index: 5;
+    .pre-title{
+      text-transform: uppercase;
+      font: $fblack 32px $raleway;
+      color: $white;
+    }
     .title{
       text-transform: uppercase;
+      font: $fbold 100px $osans;
+      letter-spacing: 0.6px;
+      color: $white;
     }
-    .subtitle{}
+    .title-strong{
+      text-transform: uppercase;
+      font: $fblack 80px $raleway;
+      color: $white;
+    }
+    .subtitle{
+      font: $fmedium 21px $raleway;
+      color: $white;
+    }
   }
 }
 .section_title{

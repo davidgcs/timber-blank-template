@@ -6857,7 +6857,7 @@ footer .footer-upper {
     footer .footer-upper .inner-container .menu-icons:last-of-type {
       margin-left: 20px; }
     footer .footer-upper .inner-container .menu-icons .menu-title {
-      border-bottom: 1px solid #FFF;
+      border-bottom: 2px solid #FFF;
       color: #FFF; }
 footer .footer-bottom {
   background-color: #6D6F79; }
@@ -6866,6 +6866,9 @@ footer ul {
   justify-content: space-between; }
   footer ul li a {
     color: #FFF !important; }
+    footer ul li a:hover {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.6) !important; }
 
 .image_text_fullcenter {
   width: 100%;
@@ -6879,8 +6882,22 @@ footer ul {
   .image_text_fullcenter .textContainer {
     position: relative;
     z-index: 5; }
+    .image_text_fullcenter .textContainer .pre-title {
+      text-transform: uppercase;
+      font: 900 32px "Raleway", sans-serif;
+      color: #FFF; }
     .image_text_fullcenter .textContainer .title {
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font: 700 100px "Open Sans", sans-serif;
+      letter-spacing: 0.6px;
+      color: #FFF; }
+    .image_text_fullcenter .textContainer .title-strong {
+      text-transform: uppercase;
+      font: 900 80px "Raleway", sans-serif;
+      color: #FFF; }
+    .image_text_fullcenter .textContainer .subtitle {
+      font: 500 21px "Raleway", sans-serif;
+      color: #FFF; }
 
 .section_title .title {
   text-transform: uppercase; }

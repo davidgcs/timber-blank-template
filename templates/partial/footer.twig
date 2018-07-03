@@ -8,6 +8,9 @@
                 {% include "menu-icons.twig" with {'menu': menu.elt.get_items, 'title': menu.elt.title} %}
                 {% include "menu-icons.twig" with {'menu': menu.fp.get_items, 'title': menu.fp.title} %}
             </div>
+            <div class="search" id="search-footer">
+                {#<input type="text" placeholder="ISBN. Busca una publicación"> <span class="icon fa-search"></span>#}
+            </div>
             {% include "menu.twig" with {'menu': menu.footer_top.get_items} %}
         </div>
     </div>
