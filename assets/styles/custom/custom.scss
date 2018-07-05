@@ -25,6 +25,10 @@ $fblack: 900;
 $raleway: 'Raleway', sans-serif;
 $osans: 'Open Sans', sans-serif;
 
+.fontello{
+  font-family: fontello;
+}
+
 h1{
   font: $fblack 32px $raleway;
   color: $black-l;
@@ -88,6 +92,8 @@ h5{
 
 .c-white{color: $white;}
 .c-red{color: $red;}
+.bg-grey{background-color: $grey}
+.bg-grey-l{background-color: $grey-l}
 
 /* Partials */
 @import "partials/header";

@@ -15,6 +15,33 @@ footer{
           color: $white;
         }
       }
+      .search-input{
+        border: none;
+        text-align: center;
+        background-color: $grey-d;
+        color: $white;
+        font-family: $raleway;
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: $white;
+          opacity: 1; /* Firefox */
+          font-family: fontello;
+        }
+
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: $white;
+          font-family: fontello;
+          //font-family: $raleway;
+        }
+
+        &::-ms-input-placeholder { /* Microsoft Edge */
+          color: $white;
+          font-family: fontello;
+          //font-family: $raleway;
+        }
+      }
+      .icon-search{
+        right: 0;
+      }
     }
   }
   .footer-bottom{

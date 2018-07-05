@@ -80,3 +80,16 @@
     }
   }
 }
+.menu_list{
+  a{
+    border: 2px solid $grey;
+    color: $grey-d;
+    text-transform: uppercase;
+    font: $fbold 14px $raleway;
+    &:hover{
+      background-color: $grey;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}

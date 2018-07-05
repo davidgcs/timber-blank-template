@@ -7,4 +7,5 @@ $context['menu']->footer_bottom = new Timber\Menu( 'footer-bottom' );
 
 if(get_field('custom_page_content')){
     $context['acf']['custom_page_content'] = get_field('custom_page_content');
+//    print_r($context['acf']['custom_page_content']);
 }

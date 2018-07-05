@@ -8,7 +8,7 @@
 
 	<body class="{{body_class}}" data-template="base.twig">
 		{% block header %}
-			<header class="header">
+			<header class="header position-relative">
 				{% include 'partial/header.twig' %}
 			</header>
 		{% endblock %}
@@ -74,6 +74,25 @@
 											</div>
 										</div>
                                     {% endfor %}
+								</div>
+                            {% endif %}
+
+							{# Block menu_list #}
+                            {% if row.acf_fc_layout == "menu_list" %}
+								<div class="menu_list d-flex justify-content-between">
+									{% for block in row.menu %}
+										<div class="menu-block d-flex flex-column w-100 text-left {% if not loop.last %}mr-2{% endif %}">
+											{% for i in block.menu_items %}
+												<a href="{{ i.item.link.0.guid }}" class="menu-item py-3 mb-1 d-flex justify-content-between">
+                                                    <span class="mx-2 my-auto">{{ i.item.link.0.post_title }}</span>
+													<span class="mx-2 my-auto icon icon-right-open"></span>
+													{% if i.item.private == "true" %}
+														(private)
+													{% endif %}
+												</a>
+											{% endfor %}
+										</div>
+									{% endfor %}
 								</div>
                             {% endif %}
 

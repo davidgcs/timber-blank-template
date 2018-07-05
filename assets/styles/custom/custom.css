@@ -6749,6 +6749,9 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+.fontello {
+  font-family: fontello; }
+
 h1 {
   font: 900 32px "Raleway", sans-serif;
   color: #343435; }
@@ -6804,6 +6807,12 @@ h5 {
 .c-red {
   color: #C40C0C; }
 
+.bg-grey {
+  background-color: #A2A2AA; }
+
+.bg-grey-l {
+  background-color: #E5E8ED; }
+
 /* Partials */
 header .wrapper {
   border-bottom: 2px solid #E5E8ED; }
@@ -6815,7 +6824,9 @@ header .wrapper {
     border: 2px solid #6D6F79;
     text-decoration: none; }
     header .wrapper .tools-area .tools-area-row .corner-btn:hover {
-      text-decoration: none; }
+      text-decoration: none;
+      background-color: #6D6F79;
+      color: #FFF; }
   header .wrapper .tools-area .tools-area-row .tool-btn {
     cursor: pointer;
     border-left: 2px solid #E5E8ED;
@@ -6847,6 +6858,11 @@ header .wrapper {
       object-fit: cover;
       margin: auto 8px auto 4px;
       border-radius: 200px; }
+header #menu #nav-main .menu-item:hover {
+  background-color: #E5E8ED;
+  color: #6D6F79; }
+header #submenu {
+  z-index: 99; }
 
 footer .footer-upper {
   background-color: #A2A2AA; }
@@ -6859,6 +6875,28 @@ footer .footer-upper {
     footer .footer-upper .inner-container .menu-icons .menu-title {
       border-bottom: 2px solid #FFF;
       color: #FFF; }
+    footer .footer-upper .inner-container .search-input {
+      border: none;
+      text-align: center;
+      background-color: #6D6F79;
+      color: #FFF;
+      font-family: "Raleway", sans-serif; }
+      footer .footer-upper .inner-container .search-input::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #FFF;
+        opacity: 1;
+        /* Firefox */
+        font-family: fontello; }
+      footer .footer-upper .inner-container .search-input:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #FFF;
+        font-family: fontello; }
+      footer .footer-upper .inner-container .search-input::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: #FFF;
+        font-family: fontello; }
+    footer .footer-upper .inner-container .icon-search {
+      right: 0; }
 footer .footer-bottom {
   background-color: #6D6F79; }
 footer ul {
@@ -6930,6 +6968,16 @@ footer ul {
 .image_text_down .custom-block img {
   width: 100%;
   object-fit: cover; }
+
+.menu_list a {
+  border: 2px solid #A2A2AA;
+  color: #6D6F79;
+  text-transform: uppercase;
+  font: 700 14px "Raleway", sans-serif; }
+  .menu_list a:hover {
+    background-color: #A2A2AA;
+    color: #FFF;
+    text-decoration: none; }
 
 /* Pages */
 

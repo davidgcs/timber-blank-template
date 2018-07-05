@@ -12,7 +12,11 @@ header{
         .corner-btn{
           border: 2px solid $grey-d;
           text-decoration: none;
-          &:hover{text-decoration: none;}
+          &:hover{
+            text-decoration: none;
+            background-color: $grey-d;
+            color: $white;
+          }
         }
         .tool-btn{
           cursor: pointer;
@@ -62,6 +66,16 @@ header{
     }
   }
   #menu{
-
+    #nav-main{
+      .menu-item{
+        &:hover{
+          background-color: $grey-l;
+          color: $grey-d;
+        }
+      }
+    }
+  }
+  #submenu{
+    z-index: 99;
   }
 }

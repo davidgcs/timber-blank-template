@@ -1,5 +1,5 @@
-<script type="text/javascript" src="{{ site.theme.link }}/assets/scripts/custom.js"></script>
 <script type="text/javascript" src="{{ site.theme.link }}/assets/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="{{ site.theme.link }}/assets/scripts/custom.js"></script>
 
 <div class="footer-upper">
     <div class="container">
@@ -8,8 +8,9 @@
                 {% include "menu-icons.twig" with {'menu': menu.elt.get_items, 'title': menu.elt.title} %}
                 {% include "menu-icons.twig" with {'menu': menu.fp.get_items, 'title': menu.fp.title} %}
             </div>
-            <div class="search" id="search-footer">
-                {#<input type="text" placeholder="ISBN. Busca una publicación"> <span class="icon fa-search"></span>#}
+            <div class="search position-relative" id="search-footer">
+                <input type="text" placeholder="ISBN. Busca una publicación &nbsp; &nbsp; &#xe800;" class="search-input p-3 w-100 fontello">
+                {#<span class="icon icon-search position-absolute"></span>#}
             </div>
             {% include "menu.twig" with {'menu': menu.footer_top.get_items} %}
         </div>
