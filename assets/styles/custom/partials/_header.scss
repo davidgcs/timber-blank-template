@@ -65,17 +65,5 @@ header{
       }
     }
   }
-  #menu{
-    #nav-main{
-      .menu-item{
-        &:hover{
-          background-color: $grey-l;
-          color: $grey-d;
-        }
-      }
-    }
-  }
-  #submenu{
-    z-index: 99;
-  }
+  @import "menu";
 }

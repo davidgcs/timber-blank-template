@@ -1,0 +1,14 @@
+{% if menu %}
+	<ul class="px-3 mb-0 d-flex w-100 {% if level and level == 2 %}py-0 flex-column{% else %}pt-0 pb-3{% endif %}">
+	{% for item in menu %}
+		<li class="{{ item.classes | join(' ') }} menu-item-child d-inline-block {% if not level or level != 2 %}w-25{% else %}w-100{% endif %} d-flex flex-column">
+            <div class="d-flex w-100 {% if not level or level != 2 %}px-3 py-3{% endif %}">
+			    <a target="{{ item.target }}" href="{{ item.link }}" class="custom-header w-100 py-3 {% if level and level == 2 %}mr-auto submenu-children {% else %}text-uppercase m-auto submenu-parent {% endif %}">{{ item.title }}</a>
+            </div>
+            {% if item.get_children %}
+                {% include "submenu.twig" with {'menu': item.get_children, 'level': 2} %}
+            {% endif %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

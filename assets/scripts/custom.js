@@ -14,9 +14,28 @@ jQuery(document).ready(function ($) {
     });
 
     /* Show submenu on menu item hover */
-    $('.menu-item').hover(()=>{
-        $('#submenu').removeClass('d-none');
-    }, ()=>{
-        $('#submenu').addClass('d-none');
+    $lastElem = null;
+
+    $('.menu-item-parent').hover(function (){
+        $current = $(this).find('.menu-index').val();
+        $(this).addClass('hover');
+        $('.submenu').each(function () {$(this).addClass('d-none');});
+        $('.submenu.submenu-index-'+$current).removeClass('d-none');
+    }, function(){
+        $lastElem = $(this);
+        $('.submenu').each(function () {$(this).addClass('d-none');});
+        $('.menu-item-parent').each(function(){$(this).removeClass('hover')});
     });
+
+    $('.submenu .submenu-space').hover(function (){
+        $('.submenu.submenu-index-'+$current).removeClass('d-none');
+        if($lastElem){
+            $lastElem.addClass('hover');
+        }
+    }, function(){
+        $('.submenu').each(function () {$(this).addClass('d-none');});
+        $('.menu-item-parent').each(function(){$(this).removeClass('hover')})
+    });
+
+
 });

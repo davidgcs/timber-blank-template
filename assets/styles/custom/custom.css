@@ -6778,7 +6778,7 @@ h5 {
   text-decoration: none; }
   .custom-header:hover {
     text-decoration: none;
-    color: #A2A2AA; }
+    color: #000; }
 
 .custom-header.strong {
   font: 800 13px "Raleway", sans-serif;
@@ -6858,11 +6858,16 @@ header .wrapper {
       object-fit: cover;
       margin: auto 8px auto 4px;
       border-radius: 200px; }
-header #menu #nav-main .menu-item:hover {
+header #menu #nav-main .menu-item:hover, header #menu #nav-main .menu-item.hover {
   background-color: #E5E8ED;
   color: #6D6F79; }
-header #submenu {
+header .submenu {
+  left: 0;
   z-index: 99; }
+  header .submenu a.submenu-parent {
+    text-align: center;
+    border-bottom: 2px solid #6D6F79;
+    width: 100%; }
 
 footer .footer-upper {
   background-color: #A2A2AA; }

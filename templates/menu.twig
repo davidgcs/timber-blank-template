@@ -1,10 +1,17 @@
 {% if menu %}
 	<ul class="p-0 mb-0">
 	{% for item in menu %}
-		<li class="{{ item.classes | join(' ') }} d-inline-block py-3">
+		<li class="{{ item.classes | join(' ') }} menu-item-parent d-inline-block py-3">
+            <input type="hidden" class="menu-index" value="{{ loop.index }}">
 			<a target="{{ item.target }}" href="{{ item.link }}" class="custom-header text-uppercase {% if loop.first %}pl-0 pt-3 pr-3 pb-3{% elseif loop.last %} pl-3 pt-3 pr-0 pb-3 {% else %}p-3{% endif %}">{{ item.title }}</a>
-			{% include "menu.twig" with {'menu': item.get_children} %}
 		</li>
+        <div class="submenu submenu-index-{{ loop.index }} d-none position-absolute w-100">
+            <div class="container position-relative w-100">
+                <div class="submenu-space bg-grey-l w-100">
+                    {% include "submenu.twig" with {'menu': item.get_children} %}
+                </div>
+            </div>
+        </div>
 	{% endfor %}
 	</ul>
 {% endif %}

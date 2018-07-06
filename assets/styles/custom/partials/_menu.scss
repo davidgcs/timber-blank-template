@@ -1,0 +1,24 @@
+#menu{
+  #nav-main{
+    .menu-item{
+      &:hover, &.hover{
+        background-color: $grey-l;
+        color: $grey-d;
+      }
+    }
+  }
+}
+.submenu{
+  left: 0;
+  z-index: 99;
+  a{
+    &.submenu-parent{
+      text-align: center;
+      border-bottom: 2px solid $grey-d;
+      width: 100%;
+    }
+    &.submenu-children{
+
+    }
+  }
+}
