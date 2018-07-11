@@ -8,6 +8,20 @@ register_nav_menus( array(
     'footer-bottom'         => __( 'Footer bottom', 'Macmillan' )
 ) );
 
+add_filter('timber/twig', 'add_to_twig');
+
+function add_to_twig($twig) {
+    /* this is where you can add your own functions to twig */
+    $twig->addExtension(new Twig_Extension_StringLoader());
+    $twig->addFilter(new Twig_SimpleFilter('pretify', 'pretify')); // add this
+    return $twig;
+}
+
+function pretify($text) {
+    return strtolower(str_replace (' ', '_',  remove_accents($text)));
+}
+
+
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php') ) . '</a></p></div>';

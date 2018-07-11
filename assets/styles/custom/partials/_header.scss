@@ -22,9 +22,10 @@ header{
           cursor: pointer;
           border-left: 2px solid $grey-l;
           border-top: 2px solid $grey-l;
-          &:hover{
+          &.hover:hover, .hover:hover{
             color: $grey;
           }
+
           &:last-of-type{
             border-right: 2px solid $grey-l;
           }
@@ -46,11 +47,30 @@ header{
               }
             }
           }
+          &.lang{
+            width: 95px;
+          }
           .language-select{
+            background-color: $white;
+            top: 102%;
+            left: -2px;
+            z-index: 9;
+            width: 95px;
             li{
-              display: none;
-              &.current{
-                display: block !important;
+              list-style: none;
+              border-right: 2px solid $grey-l;
+              border-bottom: 2px solid $grey-l;
+              border-left: 2px solid $grey-l;
+              &:hover{
+                color: $grey;
+              }
+              a{
+                width: 100%;
+                color: $black;
+                &:hover{
+                  text-decoration: none;
+                  color: $grey;
+                }
               }
             }
           }

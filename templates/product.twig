@@ -1,0 +1,69 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="container">
+        <div class="image_text_fullcenter d-flex position-relative" style="background-image: url('{{post.thumbnail.src}}');">
+            <div class="filter position-absolute w-100 h-100"></div>
+            <div class="textContainer m-auto text-center">
+                <h1 class="c-white">{{ post.title }}</h1>
+            </div>
+        </div>
+        <div class="breadcrumbs py-4">
+            {{ function('do_shortcode', '[wpseo_breadcrumb]') }}
+        </div>
+    </div>
+    <div class="container d-flex py-3">
+        <div class="sidebar-product mr-3 my-2">
+            {% for tab in acf.custom_product_content.section %}
+                <div class="tab-name py-3 custom-header" id="{{ tab.tab_name|pretify }}">{{ tab.tab_name }}</div>
+            {% endfor %}
+            <img src="{{ acf.custom_product_content.sidebar_image_1.url }}" alt="{{ acf.custom_product_content.sidebar_image_1.alt }}" class="mt-4 mb-2">
+            <img src="{{ acf.custom_product_content.sidebar_image_2.url }}" alt="{{ acf.custom_product_content.sidebar_image_2.alt }}" class="mb-4 mt-2">
+        </div>
+        {% for tab in acf.custom_product_content.section %}
+            <div class="content ml-3 content-{{ tab.tab_name|pretify }}{% if not loop.first %} d-none{% endif %}">
+                {% for row in tab.tab_content %}
+                    {% if row.acf_fc_layout == "html" %}
+                        <div class="html">{{ row.code }}</div>
+                    {% endif %}
+                    {% if row.acf_fc_layout == "icon_text" %}
+                        <div class="icon_text d-flex py-4">
+                            <span class="icon rounded-circle icon-{{ row.icon }} my-auto mr-4"></span>
+                            <div class="text">{{ row.text }}</div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    {% if acf.custom_product_content.navigation and navigation %}
+        <div class="container">
+            <div class="navigation d-flex justify-content-between py-5">
+                <a href="{{ navigation.previous.guid }}" class="previous d-flex w-100">
+                    <div class="thumbnail position-relative" style="background-image: url('{{ navigation.previous.thumbnail }}'); background-position: center; background-size: cover;">
+                        <div class="filter d-flex w-100 h-100">
+                            <span class="icon m-auto icon-left-open"></span>
+                        </div>
+                    </div>
+                    <div class="text-content d-flex justify-content-center flex-column p-5 text-left mr-2">
+                        <span class="navigation-btn">Anterior</span>
+                        <span class="navigation-title">{{ navigation.previous.post_title }}</span>
+                    </div>
+                </a>
+                <a href="{{ navigation.next.guid }}" class="next d-flex w-100">
+                    <div class="text-content d-flex justify-content-center flex-column p-5 text-right ml-2">
+                        <span class="navigation-btn">Siguiente</span>
+                        <span class="navigation-title">{{ navigation.next.post_title }}</span>
+                    </div>
+                    <div class="thumbnail position-relative" style="background-image: url('{{ navigation.next.thumbnail }}'); background-position: center; background-size: cover;">
+                        <div class="filter d-flex w-100 h-100">
+                            <span class="icon m-auto icon-right-open"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+    {% endif %}
+{% endblock %}

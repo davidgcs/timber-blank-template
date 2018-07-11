@@ -95,9 +95,18 @@ h5{
 .bg-grey{background-color: $grey}
 .bg-grey-l{background-color: $grey-l}
 
+.mw-75{max-width: 75%}
+.mw-50{max-width: 50%}
+.mw-25{max-width: 25%}
+
+.w-33{width: 33.33333%}
+
+.wpml-ls-statics-footer{display: none;}
+
 /* Partials */
 @import "partials/header";
 @import "partials/footer";
 @import "partials/blocks";
+@import "partials/product";
 /* Pages */
 @import "./pages/main";

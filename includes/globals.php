@@ -5,7 +5,60 @@ $context['menu']->fp = new Timber\Menu( 'fp-social' );
 $context['menu']->footer_top = new Timber\Menu( 'footer-top' );
 $context['menu']->footer_bottom = new Timber\Menu( 'footer-bottom' );
 
-if(get_field('custom_page_content')){
-    $context['acf']['custom_page_content'] = get_field('custom_page_content');
-//    print_r($context['acf']['custom_page_content']);
+
+/* Languages */
+$languages = icl_get_languages('skip_missing=1');
+if($languages && count($languages)>=1){
+    foreach ($languages as $language){
+        if($language['active'] != 1){
+            $langs[] = '<li class="p-2">
+                        <a href="' . $language['url'] . '">
+                            <div class="d-flex">
+                                <img src="'.$language['country_flag_url'].'" class="language-icon" alt="'.$languages['native_name'].'">
+                                '. strtoupper ($language['code']) .'
+                                <span class="icon-up-open"></span>
+                            </div>
+                        </a>
+                    </li>';
+        }
+        else{
+            $context['currentLanguage'] = '<img src="'.$language['country_flag_url'].'" class="language-icon" alt="'.$languages['native_name'].'">
+                    '. strtoupper ($language['code']) .'
+                    <span class="icon-down-open"></span>';
+        }
+    }
+    $context['languages'] = $langs;
 }
+
+/* Pagination between siblings */
+$siblings = get_pages(array(
+    'child_of' => $post->post_parent
+));
+
+foreach ($siblings as $index => $sibling){
+    if(count($siblings) > 1 && $sibling->ID == $post->ID){
+        if($siblings[$index+1]){
+            /* if exists next sibling set it */
+            $next = $siblings[$index+1];
+        }
+        else{
+            /* else next is the first one */
+            $next = $siblings[0];
+        }
+
+        if($siblings[$index-1]){
+            /* if exists previous sibling set it */
+            $previous = $siblings[$index-1];
+        }
+        else{
+            /* else previous is the last one */
+            $previous = $siblings[count($siblings)-1];
+        }
+    }
+}
+$context['navigation']['next'] = $next;
+$context['navigation']['next']->thumbnail = get_the_post_thumbnail_url($next->ID);
+$context['navigation']['previous'] = $previous;
+$context['navigation']['previous']->thumbnail = get_the_post_thumbnail_url($previous->ID);
+print_r($context['navigation']);
+print_r($siblings);

@@ -38,4 +38,18 @@ jQuery(document).ready(function ($) {
     });
 
 
+    /* Languages */
+    $('.current-language').click(function () {
+        $('.language-select').toggleClass('d-none')
+        $(this).find('span').toggleClass("icon-down-open icon-up-open");
+    })
+
+    /* Product Tabs change */
+    $('.page-template-product .tab-name').click(function () {
+        $('.page-template-product .content').each(function () {
+            $(this).addClass('d-none');
+        });
+        $('.page-template-product .content-'+$(this).attr('id')).removeClass('d-none');
+    })
+
 });
