@@ -123,6 +123,8 @@
   }
 }
 .icon_text{
+  border-top: 2px solid $grey-l;
+  border-bottom: 2px solid $grey-l;
   .icon{
     background-color: $blue;
     color: $white;
@@ -134,5 +136,19 @@
       width: 60px;
       margin: auto !important;
     }
+  }
+}
+.icons{
+  text-align: center;
+  .icon-card{
+    background-color: $grey-l;
+    .icon{
+      color: $red;
+      font-size: 45px;
+    }
+  }
+  .icon-title{
+    font: $fbold 15px $raleway;
+    color: $black;
   }
 }

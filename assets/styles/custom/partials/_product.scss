@@ -1,5 +1,10 @@
 @charset "UTF-8";
 .page-template-product{
+  .content a{
+    font-family: $raleway;
+    font-weight: $fsemi-bold;
+    color: $red;
+  }
   .sidebar-product{
     width: 30%;
     img{
@@ -11,6 +16,18 @@
       text-transform: uppercase;
       &:last-of-type{
         border-bottom: 1px solid $grey-d;
+      }
+    }
+    .isbn{
+      font: $fbold 15px $osans;
+    }
+    .file-btn{
+      background-color: $grey-l;
+      color: $black;
+      text-transform: uppercase;
+      font: $fbold 14px $raleway;
+      &:hover{
+        text-decoration: none;
       }
     }
   }
@@ -32,6 +49,27 @@
         }
       }
     }
+    .author-container{
+      height: auto;
+      overflow: auto;
+      .author{
+        float: left;
+        background-color: $grey-l;
+        img{
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+        }
+        .quote{
+          font: $fregular 14px $raleway;
+          font-style: italic;
+        }
+        .name{
+          font: $fblack 16px $raleway;
+          text-align: center;
+        }
+      }
+    }
   }
   .navigation{
     border-top: 2px solid $grey-l;
@@ -43,7 +81,7 @@
       }
     }
     .thumbnail{
-      width: 150px;
+      width: 130px;
       .filter{
         position: absolute;
         z-index: 9;

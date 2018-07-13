@@ -15,16 +15,16 @@ if($languages && count($languages)>=1){
                         <a href="' . $language['url'] . '">
                             <div class="d-flex">
                                 <img src="'.$language['country_flag_url'].'" class="language-icon" alt="'.$languages['native_name'].'">
-                                '. strtoupper ($language['code']) .'
-                                <span class="icon-up-open"></span>
+                                <span class="my-auto">'. strtoupper ($language['code']) .'</span>
+                                <span class="icon-up-open my-auto"></span>
                             </div>
                         </a>
                     </li>';
         }
         else{
             $context['currentLanguage'] = '<img src="'.$language['country_flag_url'].'" class="language-icon" alt="'.$languages['native_name'].'">
-                    '. strtoupper ($language['code']) .'
-                    <span class="icon-down-open"></span>';
+                    <span class="my-auto">'. strtoupper ($language['code']) .'</span>
+                    <span class="icon-down-open my-auto"></span>';
         }
     }
     $context['languages'] = $langs;
@@ -57,8 +57,8 @@ foreach ($siblings as $index => $sibling){
     }
 }
 $context['navigation']['next'] = $next;
-$context['navigation']['next']->thumbnail = get_the_post_thumbnail_url($next->ID);
+if($next->ID && get_the_post_thumbnail_url($next->ID))
+    $context['navigation']['next']->thumbnail = get_the_post_thumbnail_url($next->ID);
 $context['navigation']['previous'] = $previous;
-$context['navigation']['previous']->thumbnail = get_the_post_thumbnail_url($previous->ID);
-print_r($context['navigation']);
-print_r($siblings);
+if($previous->ID && get_the_post_thumbnail_url($previous->ID))
+    $context['navigation']['previous']->thumbnail = get_the_post_thumbnail_url($previous->ID);

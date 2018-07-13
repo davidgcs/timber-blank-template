@@ -19,6 +19,9 @@
             {% endfor %}
             <img src="{{ acf.custom_product_content.sidebar_image_1.url }}" alt="{{ acf.custom_product_content.sidebar_image_1.alt }}" class="mt-4 mb-2">
             <img src="{{ acf.custom_product_content.sidebar_image_2.url }}" alt="{{ acf.custom_product_content.sidebar_image_2.alt }}" class="mb-4 mt-2">
+            {% if acf.custom_product_content.isbn %}<span class="isbn">ISBN: {{ acf.custom_product_content.isbn }}</span>{% endif %}
+            {% if acf.custom_product_content.button_1 %}<a target="_blank" href="{{ acf.custom_product_content.button_1.link.url }}" class="file file-btn w-100 text-center d-block p-3 my-3"><span class="icon icon-basket mr-3"></span>{{ acf.custom_product_content.button_1.link.title }}</a>{% endif %}
+            {% if acf.custom_product_content.button_2 %}<a target="_blank" href="{{ acf.custom_product_content.button_2.link.url }}" class="file file-btn w-100 text-center d-block p-3 my-3"><span class="icon icon-basket mr-3"></span>{{ acf.custom_product_content.button_2.link.title }}</a>{% endif %}
         </div>
         {% for tab in acf.custom_product_content.section %}
             <div class="content ml-3 content-{{ tab.tab_name|pretify }}{% if not loop.first %} d-none{% endif %}">
@@ -26,12 +29,53 @@
                     {% if row.acf_fc_layout == "html" %}
                         <div class="html">{{ row.code }}</div>
                     {% endif %}
+
                     {% if row.acf_fc_layout == "icon_text" %}
-                        <div class="icon_text d-flex py-4">
+                        <div class="icon_text d-flex py-4 my-4">
                             <span class="icon rounded-circle icon-{{ row.icon }} my-auto mr-4"></span>
                             <div class="text">{{ row.text }}</div>
                         </div>
                     {% endif %}
+
+                    {% if row.acf_fc_layout == "authors" %}
+                        <div class="authors d-flex flex-column py-4">
+                            <h1>{{ row.title }}</h1>
+                            <div class="author-container d-block">
+                                {% for author in row.list %}
+                                    {% if loop.index is odd %}
+                                        <div class="d-flex author-row">
+                                    {% endif %}
+                                    <div class="author p-4 my-2 d-inline-flex flex-column w-50 {% if loop.index is odd %}mr-2{% else %}ml-2{% endif %}" {% if loop.index is odd and loop.last %}style="width: calc(50% - 8px)!important;" {% endif %}>
+                                        <img src="{{ author.image.url }}" alt="{{ author.image.alt }}" class="rounded-circle mb-auto mx-auto">
+                                        <div class="quote text-center my-3">{{ author.quote }}</div>
+                                        <span class="name mt-auto">{{ author.name }}</span>
+                                    </div>
+                                    {% if loop.index is even or loop.index is odd and loop.last %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {# Block icons #}
+                    {% if row.acf_fc_layout == "icons" %}
+                        <div class="icons py-4 d-flex">
+                            {% for icard in row.list %}
+                                {% if icard.link %}<a href="{{ icard.link.url }}" target="{{ icard.link.target }}" class="w-33">{% else %} <span class="icon-container w-33"> {% endif %}
+                                <div class="icon-card p-5 mx-1 mb-3">
+                            <span class="icon icon-{{ icard.icon }}"></span>
+                        </div>
+                                <span class="icon-title">{{ icard.title }}</span>
+                                {% if icard.link %}</a>{% else %} </span> {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {# Block product_menu_down #}
+                    {% if row.acf_fc_layout == "product_menu_down" %}
+                    {% endif %}
+
                 {% endfor %}
             </div>
         {% endfor %}

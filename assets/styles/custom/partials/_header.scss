@@ -5,6 +5,9 @@ header{
     .hdr-logo{
       img{
         width: 250px;
+        @include media-breakpoint-down(md) {
+          width: 100px;
+        }
       }
     }
     .tools-area{
@@ -22,6 +25,10 @@ header{
           cursor: pointer;
           border-left: 2px solid $grey-l;
           border-top: 2px solid $grey-l;
+          .current-language{
+            font: $fextra-bold 14px $raleway;
+            color: $grey-d;
+          }
           &.hover:hover, .hover:hover{
             color: $grey;
           }

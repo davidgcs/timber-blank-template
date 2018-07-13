@@ -33,7 +33,7 @@ include( 'includes/globals.php');
 /* Custom page ACF */
 if(get_field('custom_page_content')){
     $context['acf']['custom_page_content'] = get_field('custom_page_content');
-//    print_r($context['acf']['custom_page_content']);
+    //print_r($context['acf']['custom_page_content']);
 }
 
 if(file_exists(get_template_directory().'/includes/pages/' . $post->post_name . '.php')){

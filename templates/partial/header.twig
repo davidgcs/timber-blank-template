@@ -1,50 +1,66 @@
-<div class="wrapper">
-    <div class="container d-flex justify-content-between">
-        <div class="hdr-logo my-auto" role="banner">
-            <a class="hdr-logo-link" href="{{site.url}}" rel="home">
-                <img src="{{ theme.link }}/assets/images/logo.png" alt="Macmillan Education">
-            </a>
-        </div>
-        <div class="tools-area d-flex flex-column">
-            <div class="tools-area-row mt-4 d-flex justify-content-center">
-                <a href="{{site.url}}/teachers-corner" class="corner-btn w-100 mr-1 px-2 py-2 d-flex custom-header"><span class="m-auto">Teacher's corner</span></a>
-                <a href="#" class="corner-btn w-100 ml-1 px-2 py-2 d-flex custom-header"><span class="m-auto">Pupil's corner</span></a>
+<div class="desktop d-none d-md-block">
+    <div class="wrapper">
+        <div class="container d-flex justify-content-between">
+            <div class="hdr-logo my-auto" role="banner">
+                <a class="hdr-logo-link" href="{{site.url}}" rel="home">
+                    <img src="{{ theme.link }}/assets/images/logo.png" alt="Macmillan Education">
+                </a>
             </div>
-            <div class="tools-area-row mt-4 d-flex justify-content-center">
-                <div class="tool-btn p-2 hover">
-                    <span class="icon-search"></span>
+            <div class="tools-area d-flex flex-column">
+                <div class="tools-area-row mt-4 d-flex justify-content-center">
+                    <a href="{{site.url}}/teachers-corner" class="corner-btn w-100 mr-1 px-2 py-2 d-flex custom-header"><span class="m-auto">Teacher's corner</span></a>
+                    <a href="#" class="corner-btn w-100 ml-1 px-2 py-2 d-flex custom-header"><span class="m-auto">Pupil's corner</span></a>
                 </div>
-                <div class="tool-btn p-2 hover">
-                    <span class="icon-cart"></span>
-                </div>
-                <div class="tool-btn p-2 hover">
-                    <span class="icon-profile"></span>
-                </div>
-                {# Advantage #}
-                <div class="tool-btn p-2 btn-large position-relative">
-                    <span class="icon-advantage c-red"></span>
-                </div>
-                {# Selector de idioma #}
-                <div class="tool-btn lang p-2 d-flex position-relative">
-                    <div class="current-language d-flex hover">
-                        {{ currentLanguage }}
+                <div class="tools-area-row mt-4 d-flex justify-content-center">
+                    <div class="tool-btn p-2 hover">
+                        <span class="icon-search"></span>
                     </div>
-                    <ul class="language-select p-0 m-0 position-absolute d-none">
-                        {% for lang in languages %}
-                            {{ lang }}
-                        {% endfor %}
-                    </ul>
+                    <div class="tool-btn p-2 hover">
+                        <span class="icon-cart"></span>
+                    </div>
+                    <div class="tool-btn p-2 hover">
+                        <span class="icon-profile"></span>
+                    </div>
+                    {# Advantage #}
+                    <div class="tool-btn p-2 btn-large position-relative">
+                        <span class="icon-advantage c-red"></span>
+                    </div>
+                    {# Selector de idioma #}
+                    <div class="tool-btn lang p-2 d-flex position-relative">
+                        <div class="current-language d-flex hover">
+                            <span class="my-auto">{{ currentLanguage }}</span>
+                        </div>
+                        <ul class="language-select p-0 m-0 position-absolute d-none">
+                            {% for lang in languages %}
+                                {{ lang }}
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="menu">
+        <div class="container">
+            {% block menu %}
+                <nav id="nav-main" class="nav-main" role="navigation">
+                    {% include "menu.twig" with {'menu': menu.header.get_items} %}
+                </nav><!-- #nav -->
+            {% endblock %}
         </div>
     </div>
 </div>
-<div id="menu">
-    <div class="container">
-        {% block menu %}
-            <nav id="nav-main" class="nav-main" role="navigation">
-                {% include "menu.twig" with {'menu': menu.header.get_items} %}
-            </nav><!-- #nav -->
-        {% endblock %}
+<div class="mobile d-block d-md-none">
+    <div class="wrapper">
+        <div class="container d-flex justify-content-between">
+            <span class="icon icon-menu my-auto"></span>
+            <div class="hdr-logo m-auto py-3" role="banner">
+                <a class="hdr-logo-link" href="{{site.url}}" rel="home">
+                    <img src="{{ theme.link }}/assets/images/logo.png" alt="Macmillan Education">
+                </a>
+            </div>
+            <span class="icon-search my-auto"></span>
+        </div>
     </div>
+    <div id="menu-mobile"></div>
 </div>

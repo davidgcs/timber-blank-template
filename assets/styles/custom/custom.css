@@ -6753,6 +6753,13 @@ a.text-dark:hover, a.text-dark:focus {
 .fontello {
   font-family: fontello; }
 
+.overflow-x-hidden {
+  overflow-x: hidden; }
+
+a, a:hover {
+  text-decoration: none;
+  color: inherit; }
+
 h1 {
   font: 900 32px "Raleway", sans-serif;
   color: #343435; }
@@ -6836,6 +6843,9 @@ header .wrapper {
     margin-bottom: -1px; }
   header .wrapper .hdr-logo img {
     width: 250px; }
+    @media (max-width: 991.98px) {
+      header .wrapper .hdr-logo img {
+        width: 100px; } }
   header .wrapper .tools-area .tools-area-row .corner-btn {
     border: 2px solid #6D6F79;
     text-decoration: none; }
@@ -6847,6 +6857,9 @@ header .wrapper {
     cursor: pointer;
     border-left: 2px solid #E5E8ED;
     border-top: 2px solid #E5E8ED; }
+    header .wrapper .tools-area .tools-area-row .tool-btn .current-language {
+      font: 800 14px "Raleway", sans-serif;
+      color: #6D6F79; }
     header .wrapper .tools-area .tools-area-row .tool-btn.hover:hover, header .wrapper .tools-area .tools-area-row .tool-btn .hover:hover {
       color: #A2A2AA; }
     header .wrapper .tools-area .tools-area-row .tool-btn:last-of-type {
@@ -7035,17 +7048,35 @@ footer ul {
     color: #FFF;
     text-decoration: none; }
 
-.icon_text .icon {
-  background-color: #007bff;
-  color: #FFF;
-  display: flex;
-  width: 60px;
-  height: 60px;
-  font-size: 24px; }
-  .icon_text .icon:before {
+.icon_text {
+  border-top: 2px solid #E5E8ED;
+  border-bottom: 2px solid #E5E8ED; }
+  .icon_text .icon {
+    background-color: #007bff;
+    color: #FFF;
+    display: flex;
     width: 60px;
-    margin: auto !important; }
+    height: 60px;
+    font-size: 24px; }
+    .icon_text .icon:before {
+      width: 60px;
+      margin: auto !important; }
 
+.icons {
+  text-align: center; }
+  .icons .icon-card {
+    background-color: #E5E8ED; }
+    .icons .icon-card .icon {
+      color: #C40C0C;
+      font-size: 45px; }
+  .icons .icon-title {
+    font: 700 15px "Raleway", sans-serif;
+    color: #000; }
+
+.page-template-product .content a {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #C40C0C; }
 .page-template-product .sidebar-product {
   width: 30%; }
   .page-template-product .sidebar-product img {
@@ -7056,6 +7087,15 @@ footer ul {
     text-transform: uppercase; }
     .page-template-product .sidebar-product .tab-name:last-of-type {
       border-bottom: 1px solid #6D6F79; }
+  .page-template-product .sidebar-product .isbn {
+    font: 700 15px "Open Sans", sans-serif; }
+  .page-template-product .sidebar-product .file-btn {
+    background-color: #E5E8ED;
+    color: #000;
+    text-transform: uppercase;
+    font: 700 14px "Raleway", sans-serif; }
+    .page-template-product .sidebar-product .file-btn:hover {
+      text-decoration: none; }
 .page-template-product .content {
   width: 70%; }
   .page-template-product .content ul {
@@ -7071,6 +7111,22 @@ footer ul {
         content: '•';
         color: #C40C0C;
         margin-right: 6px; }
+  .page-template-product .content .author-container {
+    height: auto;
+    overflow: auto; }
+    .page-template-product .content .author-container .author {
+      float: left;
+      background-color: #E5E8ED; }
+      .page-template-product .content .author-container .author img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover; }
+      .page-template-product .content .author-container .author .quote {
+        font: 400 14px "Raleway", sans-serif;
+        font-style: italic; }
+      .page-template-product .content .author-container .author .name {
+        font: 900 16px "Raleway", sans-serif;
+        text-align: center; }
 .page-template-product .navigation {
   border-top: 2px solid #E5E8ED; }
   .page-template-product .navigation a {
@@ -7079,7 +7135,7 @@ footer ul {
     .page-template-product .navigation a:hover {
       text-decoration: none; }
   .page-template-product .navigation .thumbnail {
-    width: 150px; }
+    width: 130px; }
     .page-template-product .navigation .thumbnail .filter {
       position: absolute;
       z-index: 9;

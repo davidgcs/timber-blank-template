@@ -29,6 +29,15 @@ $osans: 'Open Sans', sans-serif;
   font-family: fontello;
 }
 
+.overflow-x-hidden{
+  overflow-x: hidden;
+}
+
+a, a:hover{
+  text-decoration: none;
+  color: inherit;
+}
+
 h1{
   font: $fblack 32px $raleway;
   color: $black-l;

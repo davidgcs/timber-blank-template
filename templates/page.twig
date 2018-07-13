@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <div class="container">
+    <div class="container overflow-x-hidden">
         {% for row in acf.custom_page_content %}
 
             {# Block image_text_fullcenter #}
@@ -28,12 +28,14 @@
                 <div class="image_text_tooltip w-100 h-auto my-5">
                     {% for c in row.card %}
                         <div class="custom-card position-relative p-2 size-{{c.size}}">
-                            <div class="tooltipContainer d-flex" style="background-image: url('{{c.image.url}}');">
-                                <div class="tooltip position-relative mr-auto my-auto ml-5 p-4 mw-50">
-                                    <h3 class="title">{{ c.title }}</h3>
-                                    <p class="description">{{ c.description }}</p>
+                            {% if c.link %}<a href="{{ c.link.url }}" target="{{ c.link.target }}">{% endif %}
+                                <div class="tooltipContainer d-flex" style="background-image: url('{{c.image.url}}');">
+                                    <div class="tooltip position-relative mr-auto my-auto ml-5 p-4 mw-50">
+                                        <h3 class="title">{{ c.title }}</h3>
+                                        <p class="description">{{ c.description }}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            {% if c.link %}</a>{% endif %}
                         </div>
                     {% endfor %}
                 </div>
@@ -44,11 +46,13 @@
                 <div class="image_text_down w-100 h-auto my-5 d-flex">
                     {% for i in row.block %}
                         <div class="custom-block position-relative w-33 {% if row.block|length <3 %}pr-2{% elseif loop.index != 3 %}mr-2{% endif %}">
+                            {% if i.link %}<a href="{{ i.link.url }}" target="{{ i.link.target }}">{% endif %}
                             <img src="{{ i.image.url }}" alt="{{ i.image.alt }}" class="w-100">
                             <div class="textContainer position-relative py-4">
                                 <h3 class="title">{{ i.title }}</h3>
                                 <p class="description">{{ i.description }}</p>
                             </div>
+                            {% if i.link %}</a>{% endif %}
                         </div>
                     {% endfor %}
                 </div>
@@ -86,12 +90,12 @@
 
             {# Block menu_list #}
             {% if row.acf_fc_layout == "menu_list" %}
-                <div class="menu_list d-flex justify-content-between">
+                <div class="menu_list d-flex justify-content-between my-5">
                     {% for block in row.menu %}
                         <div class="menu-block d-flex flex-column w-100 text-left {% if not loop.last %}mr-2{% endif %}">
                             {% for i in block.menu_items %}
-                                <a href="{{ i.item.link.0.guid }}" class="menu-item py-3 mb-1 d-flex justify-content-between">
-                                    <span class="mx-2 my-auto">{{ i.item.link.0.post_title }}</span>
+                                <a href="{{ i.item.link.url }}" target="{{ i.item.link.target }}" class="menu-item py-3 mb-1 d-flex justify-content-between">
+                                    <span class="mx-2 my-auto">{{ i.item.link.title }}</span>
                                     <span class="mx-2 my-auto icon icon-right-open"></span>
                                     {% if i.item.private == "true" %}
                                         (private)
@@ -99,6 +103,20 @@
                                 </a>
                             {% endfor %}
                         </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {# Block icons #}
+            {% if row.acf_fc_layout == "icons" %}
+                <div class="icons py-4 d-flex">
+                    {% for icard in row.list %}
+                    {% if icard.link %}<a href="{{ icard.link.url }}" target="{{ icard.link.target }}" class="w-25">{% else %} <span class="icon-container w-25"> {% endif %}
+                        <div class="icon-card p-5 mx-1 mb-3">
+                            <span class="icon icon-{{ icard.icon }}"></span>
+                        </div>
+                        <span class="icon-title">{{ icard.title }}</span>
+                    {% if icard.link %}</a>{% else %} </span> {% endif %}
                     {% endfor %}
                 </div>
             {% endif %}

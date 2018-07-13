@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
     /* Languages */
     $('.current-language').click(function () {
         $('.language-select').toggleClass('d-none')
-        $(this).find('span').toggleClass("icon-down-open icon-up-open");
+        $(this).find('span.icon-down-open,span.icon-up-open').toggleClass("icon-down-open icon-up-open");
     })
 
     /* Product Tabs change */
