@@ -1,7 +1,7 @@
 {% block html_head_container %}
 
 {% include 'html-header.twig' %}
-	{% block head %}
+	{% block include_head %}
 	{% endblock %}
 	</head>
 {% endblock %}
@@ -30,6 +30,8 @@
 		{% block footer %}
 			<footer id="footer">
 				{% include 'partial/footer.twig' %}
+				{% block include_footer %}
+				{% endblock %}
 			</footer>
 			{{ function('wp_footer') }}
 		{% endblock %}

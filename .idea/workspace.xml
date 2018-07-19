@@ -3,35 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="497d1cb3-22e0-4cd8-90ed-99d3cb149924" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-codes.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-codes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-codes.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-codes.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-embedded.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-embedded.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-embedded.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-embedded.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-ie7-codes.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-ie7-codes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-ie7-codes.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-ie7-codes.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-ie7.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-ie7.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-ie7.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello-ie7.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/css/fontello.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/font/fontello.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/font/fontello.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/font/fontello.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/font/fontello.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/font/fontello.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/font/fontello.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/font/fontello.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/font/fontello.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontello/font/fontello.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/fontello/font/fontello.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scripts/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scripts/custom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/custom/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/custom/custom.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/custom/custom.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/custom/custom.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/custom/custom.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/custom/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/custom/custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/custom/partials/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/custom/partials/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/custom/partials/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/custom/partials/_footer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/custom/partials/_product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/custom/partials/_product.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/custom/partials/blocks.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/custom/partials/blocks.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/globals.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/globals.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page.php" beforeDir="false" afterPath="$PROJECT_DIR$/page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/page.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/home.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partial/header.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partial/header.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/product.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +27,17 @@
       <file leaf-file-name="page.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/page.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="43" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="43" />
+            <state relative-caret-position="1037">
+              <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="66" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -55,8 +45,17 @@
       <file leaf-file-name="product.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/product.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="68" column="71" selection-start-line="68" selection-start-column="71" selection-end-line="68" selection-end-column="71" />
+            <state relative-caret-position="1428">
+              <caret line="84" column="148" selection-start-line="84" selection-start-column="148" selection-end-line="84" selection-end-column="148" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/scripts/custom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1207">
+              <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -64,8 +63,8 @@
       <file leaf-file-name="blocks.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/blocks.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="151" column="17" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
+            <state relative-caret-position="1156">
+              <caret line="198" selection-start-line="198" selection-end-line="198" />
               <folding>
                 <element signature="e#40#701#0" />
                 <element signature="e#716#778#0" />
@@ -82,20 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_product.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/_product.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="101" column="36" selection-start-line="101" selection-start-column="36" selection-end-line="101" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="product.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/product.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -103,8 +93,26 @@
       <file leaf-file-name="custom.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/styles/custom/custom.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+            <state relative-caret-position="435">
+              <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_footer.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/_footer.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-323">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_product.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/_product.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -112,41 +120,8 @@
       <file leaf-file-name="_header.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/_header.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#6#670#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/partial/header.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
-              <folding>
-                <element signature="n#div#1;n#div#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fontello.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/fonts/fontello/css/fontello.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+            <state relative-caret-position="119">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -166,6 +141,13 @@
       <find>Twig_Environment</find>
       <find>content</find>
       <find>250</find>
+      <find>file</find>
+      <find>button_1</find>
+      <find>author</find>
+      <find>icon-card</find>
+      <find>side</find>
+      <find>tab</find>
+      <find>product-men</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\david\Desktop\Work\2018\macmillan\templates</dir>
@@ -186,26 +168,27 @@
         <option value="$PROJECT_DIR$/assets/styles/custom/pages/main.scss" />
         <option value="$PROJECT_DIR$/templates/html-header.twig" />
         <option value="$PROJECT_DIR$/templates/menu-icons.twig" />
-        <option value="$PROJECT_DIR$/assets/styles/custom/partials/_footer.scss" />
         <option value="$PROJECT_DIR$/templates/partial/footer.twig" />
         <option value="$PROJECT_DIR$/assets/styles/custom/partials/_menu.scss" />
         <option value="$PROJECT_DIR$/templates/menu.twig" />
         <option value="$PROJECT_DIR$/templates/submenu.twig" />
         <option value="$PROJECT_DIR$/templates/index.twig" />
-        <option value="$PROJECT_DIR$/functions.php" />
-        <option value="$PROJECT_DIR$/assets/scripts/custom.js" />
         <option value="$PROJECT_DIR$/includes/globals.php" />
-        <option value="$PROJECT_DIR$/templates/base.twig" />
         <option value="$PROJECT_DIR$/assets/fonts/fontello/css/fontello.css" />
-        <option value="$PROJECT_DIR$/assets/styles/custom/partials/_product.scss" />
-        <option value="$PROJECT_DIR$/assets/styles/custom/partials/blocks.scss" />
-        <option value="$PROJECT_DIR$/templates/product.twig" />
         <option value="$PROJECT_DIR$/page.php" />
         <option value="$PROJECT_DIR$/templates/page.twig" />
-        <option value="$PROJECT_DIR$/assets/styles/custom/custom.scss" />
         <option value="$PROJECT_DIR$/templates/partial/header.twig" />
         <option value="$PROJECT_DIR$/assets/styles/custom/partials/_header.scss" />
+        <option value="C:/xampp/htdocs/macmillan/wp-config.php" />
+        <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/product.php" />
+        <option value="$PROJECT_DIR$/assets/styles/custom/partials/blocks.scss" />
+        <option value="$PROJECT_DIR$/templates/base.twig" />
+        <option value="$PROJECT_DIR$/assets/styles/custom/partials/_product.scss" />
+        <option value="$PROJECT_DIR$/assets/scripts/custom.js" />
+        <option value="$PROJECT_DIR$/templates/product.twig" />
+        <option value="$PROJECT_DIR$/assets/styles/custom/custom.scss" />
+        <option value="$PROJECT_DIR$/assets/styles/custom/partials/_footer.scss" />
       </list>
     </option>
   </component>
@@ -221,8 +204,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1919" />
-    <option name="y" value="93" />
+    <option name="x" value="1912" />
+    <option name="y" value="56" />
     <option name="width" value="1456" />
     <option name="height" value="886" />
   </component>
@@ -231,9 +214,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,41 +225,6 @@
               <item name="macmillan" type="b2602c69:ProjectViewProjectNode" />
               <item name="macmillan" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="macmillan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="macmillan" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="macmillan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="macmillan" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-              <item name="fontello" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="macmillan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="macmillan" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-              <item name="fontello" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="macmillan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="macmillan" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-              <item name="fontello" type="462c0819:PsiDirectoryNode" />
-              <item name="font" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="macmillan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="macmillan" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="macmillan" type="b2602c69:ProjectViewProjectNode" />
@@ -357,6 +302,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,6 +413,10 @@
       <workItem from="1531295422870" duration="11847000" />
       <workItem from="1531381565812" duration="12820000" />
       <workItem from="1531465316557" duration="7714000" />
+      <workItem from="1531726761846" duration="8400000" />
+      <workItem from="1531813382249" duration="10842000" />
+      <workItem from="1531899981962" duration="15348000" />
+      <workItem from="1531984946547" duration="1208000" />
     </task>
     <task id="LOCAL-00001" summary="styles relationship with example">
       <created>1529504929525</created>
@@ -519,7 +471,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130864000" />
+    <option name="totallyTimeSpent" value="166662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="56" width="1456" height="886" extended-state="6" />
@@ -528,7 +480,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info id="Image Layers" order="2" />
+      <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" />
@@ -537,12 +489,12 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32486632" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.328877" />
       <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21418338" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4986631" visible="true" weight="0.19842407" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="4" sideWeight="0.5013369" side_tool="true" weight="0.2170487" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
+      <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -572,13 +524,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Pagina de producto. Navegación. Idiomas. Custom pipe. Sidebar custom." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/scripts/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -720,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/html-header.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="104" selection-start-line="24" selection-start-column="104" selection-end-line="24" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/menu-icons.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -746,13 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="76" lean-forward="true" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/_footer.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -798,31 +729,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scripts/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/globals.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -840,10 +750,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/blocks.scss">
+    <entry file="file://$PROJECT_DIR$/templates/partial/header.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#6#670#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="151" column="17" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/xampp/htdocs/macmillan/wp-config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="61" column="23" lean-forward="true" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/html-header.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/page.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="66" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scripts/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/blocks.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
           <folding>
             <element signature="e#40#701#0" />
             <element signature="e#716#778#0" />
@@ -859,65 +828,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product.twig">
+    <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="68" column="71" selection-start-line="68" selection-start-column="71" selection-end-line="68" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/page.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="43" />
+        <state relative-caret-position="119">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/_product.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="101" column="36" selection-start-line="101" selection-start-column="36" selection-end-line="101" selection-end-column="36" />
+        <state relative-caret-position="85">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="84" column="148" selection-start-line="84" selection-start-column="148" selection-end-line="84" selection-end-column="148" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/styles/custom/custom.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        <state relative-caret-position="435">
+          <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/_header.scss">
+    <entry file="file://$PROJECT_DIR$/assets/styles/custom/partials/_footer.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/partial/header.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#6#670#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        <state relative-caret-position="-323">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>

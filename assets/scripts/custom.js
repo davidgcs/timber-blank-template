@@ -42,14 +42,35 @@ jQuery(document).ready(function ($) {
     $('.current-language').click(function () {
         $('.language-select').toggleClass('d-none')
         $(this).find('span.icon-down-open,span.icon-up-open').toggleClass("icon-down-open icon-up-open");
-    })
+    });
 
     /* Product Tabs change */
     $('.page-template-product .tab-name').click(function () {
+        $('.page-template-product .tab-name').each(function () {
+            $(this).removeClass('active');
+        });
+        $(this).addClass('active');
         $('.page-template-product .content').each(function () {
             $(this).addClass('d-none');
         });
         $('.page-template-product .content-'+$(this).attr('id')).removeClass('d-none');
-    })
+    });
+
+
+    /* Swiper */
+    $(document).ready(function () {
+        //initialize swiper when document ready
+        var mySwiper = new Swiper ('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            simulateTouch: true,
+            shortSwipes: false,
+            freeMode: true,
+            grabCursor: true,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            slideToClickedSlide: true
+        })
+    });
 
 });

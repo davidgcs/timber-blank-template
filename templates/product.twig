@@ -1,8 +1,18 @@
 {% extends "base.twig" %}
 
+{% block include_head %}
+    <link rel="stylesheet" href="{{ site.theme.link }}/assets/styles/swiper.min.css">
+{% endblock %}
+
 {% block content %}
+    <div class="w-100 d-flex d-md-none image_text_fullcenter d-flex position-relative" style="background-image: url('{{post.thumbnail.src}}');">
+        <div class="filter position-absolute w-100 h-100"></div>
+        <div class="textContainer m-auto text-center">
+            <h1 class="c-white">{{ post.title }}</h1>
+        </div>
+    </div>
     <div class="container">
-        <div class="image_text_fullcenter d-flex position-relative" style="background-image: url('{{post.thumbnail.src}}');">
+        <div class="image_text_fullcenter d-md-flex d-none position-relative" style="background-image: url('{{post.thumbnail.src}}');">
             <div class="filter position-absolute w-100 h-100"></div>
             <div class="textContainer m-auto text-center">
                 <h1 class="c-white">{{ post.title }}</h1>
@@ -12,19 +22,29 @@
             {{ function('do_shortcode', '[wpseo_breadcrumb]') }}
         </div>
     </div>
+    <div class="tabs-responsive py-3 d-block d-md-none">
+        <div class="swiper-container container d-flex d-md-none">
+            <div class="swiper-wrapper mw-100">
+                {% for tab in acf.custom_product_content.section %}
+                    <div class="swiper-slide tab-name p-3 ml-3 custom-header {% if loop.first %}ml-0 active{% endif %}" id="{{ tab.tab_name|pretify }}" style="width: auto">{{ tab.tab_name }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
     <div class="container d-flex py-3">
-        <div class="sidebar-product mr-3 my-2">
+        <div class="sidebar-product d-none d-md-block mr-3 my-2">
             {% for tab in acf.custom_product_content.section %}
                 <div class="tab-name py-3 custom-header" id="{{ tab.tab_name|pretify }}">{{ tab.tab_name }}</div>
             {% endfor %}
-            <img src="{{ acf.custom_product_content.sidebar_image_1.url }}" alt="{{ acf.custom_product_content.sidebar_image_1.alt }}" class="mt-4 mb-2">
-            <img src="{{ acf.custom_product_content.sidebar_image_2.url }}" alt="{{ acf.custom_product_content.sidebar_image_2.alt }}" class="mb-4 mt-2">
+            {% if acf.custom_product_content.sidebar_image_1 %}<div class="imageContainer w-100 m-auto"><img src="{{ acf.custom_product_content.sidebar_image_1.url }}" alt="{{ acf.custom_product_content.sidebar_image_1.alt }}" class="mt-4 mb-2"></div>{% endif %}
+            {% if acf.custom_product_content.sidebar_image_2 %}<div class="imageContainer w-100 m-auto"><img src="{{ acf.custom_product_content.sidebar_image_2.url }}" alt="{{ acf.custom_product_content.sidebar_image_2.alt }}" class="mb-4 mt-2"></div>{% endif %}
             {% if acf.custom_product_content.isbn %}<span class="isbn">ISBN: {{ acf.custom_product_content.isbn }}</span>{% endif %}
-            {% if acf.custom_product_content.button_1 %}<a target="_blank" href="{{ acf.custom_product_content.button_1.link.url }}" class="file file-btn w-100 text-center d-block p-3 my-3"><span class="icon icon-basket mr-3"></span>{{ acf.custom_product_content.button_1.link.title }}</a>{% endif %}
-            {% if acf.custom_product_content.button_2 %}<a target="_blank" href="{{ acf.custom_product_content.button_2.link.url }}" class="file file-btn w-100 text-center d-block p-3 my-3"><span class="icon icon-basket mr-3"></span>{{ acf.custom_product_content.button_2.link.title }}</a>{% endif %}
+            {% if acf.custom_product_content.button_1.link %}<a target="_blank" href="{{ acf.custom_product_content.button_1.link.url }}" class="file file-btn w-100 text-center d-block p-3 my-3"><span class="icon icon-basket mr-3"></span>{{ acf.custom_product_content.button_1.link.title }}</a>{% endif %}
+            {% if acf.custom_product_content.button_2.link %}<a target="_blank" href="{{ acf.custom_product_content.button_2.link.url }}" class="file file-btn w-100 text-center d-block p-3 my-3"><span class="icon icon-basket mr-3"></span>{{ acf.custom_product_content.button_2.link.title }}</a>{% endif %}
         </div>
         {% for tab in acf.custom_product_content.section %}
-            <div class="content ml-3 content-{{ tab.tab_name|pretify }}{% if not loop.first %} d-none{% endif %}">
+            <div class="content ml-3 content-{{ tab.tab_name|pretify }}{% if not loop.first %} d-none{% endif %} w-100">
                 {% for row in tab.tab_content %}
                     {% if row.acf_fc_layout == "html" %}
                         <div class="html">{{ row.code }}</div>
@@ -43,9 +63,9 @@
                             <div class="author-container d-block">
                                 {% for author in row.list %}
                                     {% if loop.index is odd %}
-                                        <div class="d-flex author-row">
+                                        <div class="d-flex flex-md-row flex-column author-row">
                                     {% endif %}
-                                    <div class="author p-4 my-2 d-inline-flex flex-column w-50 {% if loop.index is odd %}mr-2{% else %}ml-2{% endif %}" {% if loop.index is odd and loop.last %}style="width: calc(50% - 8px)!important;" {% endif %}>
+                                    <div class="author p-4 my-2 d-inline-flex flex-column w-md-50 w-100 {% if loop.index is odd %}mr-md-2{% else %}ml-md-2{% endif %}" {% if loop.index is odd and loop.last %}style="width: calc(50% - 8px)!important;" {% endif %}>
                                         <img src="{{ author.image.url }}" alt="{{ author.image.alt }}" class="rounded-circle mb-auto mx-auto">
                                         <div class="quote text-center my-3">{{ author.quote }}</div>
                                         <span class="name mt-auto">{{ author.name }}</span>
@@ -60,10 +80,10 @@
 
                     {# Block icons #}
                     {% if row.acf_fc_layout == "icons" %}
-                        <div class="icons py-4 d-flex">
+                        <div class="icons py-md-4 d-flex flex-md-row flex-column">
                             {% for icard in row.list %}
-                                {% if icard.link %}<a href="{{ icard.link.url }}" target="{{ icard.link.target }}" class="w-33">{% else %} <span class="icon-container w-33"> {% endif %}
-                                <div class="icon-card p-5 mx-1 mb-3">
+                                {% if icard.link %}<a href="{{ icard.link.url }}" target="{{ icard.link.target }}" class="w-100 w-md-33 mb-4 mb-md-0">{% else %} <span class="icon-container w-100 w-md-33 mb-4 mb-md-0"> {% endif %}
+                                <div class="icon-card p-5 {% if loop.first and row.list|length > 1 %}mr-md-2{% elseif loop.last and row.list|length > 1 %}ml-md-2{% elseif row.list|length > 1 %}mx-md-2{% endif %} mb-3">
                             <span class="icon icon-{{ icard.icon }}"></span>
                         </div>
                                 <span class="icon-title">{{ icard.title }}</span>
@@ -72,8 +92,113 @@
                         </div>
                     {% endif %}
 
+                    {# Block section title #}
+                    {% if row.acf_fc_layout == "section_title" %}
+                        <div class="section_title {% if loop.first %}mb-5{% else %}my-5{% endif %}">
+                            <h2 class="title">{{ row.title }}</h2>
+                            <p class="subtitle">{{ row.subtitle }}</p>
+                        </div>
+                    {% endif %}
+
                     {# Block product_menu_down #}
                     {% if row.acf_fc_layout == "product_menu_down" %}
+                        <div class="product-menu-down d-md-flex d-none flex-column my-5">
+                            <div class="d-flex">
+                                {% for item in row.list %}
+                                        <div class="product-menu-item w-100 {% if row.list|length<=2 %}w-md-50{% else %}w-md-33{% endif %} {% if not loop.last and not loop.first%}mx-2{% endif %} {% if row.list|length==2 and loop.first %}mr-2{% elseif row.list|length==2 and loop.last %}ml-2{% endif %} d-flex flex-column">
+                                            <img src="{{ item.image.url }}" alt="{{ item.image.alt }}" class="product-menu-image mx-auto w-100">
+                                            <div class="text-container">
+                                                <div class="title my-3">{{ item.title }}</div>
+                                                <div class="subtitle my-3">{{ item.subtitle }}</div>
+                                            </div>
+                                        </div>
+                                {% endfor %}
+                            </div>
+                            <div class="d-flex">
+                                {% for item in row.list %}
+                                        <div class="buttons d-flex flex-column w-100 {% if row.list|length<=2 %}w-md-50{% else %}w-md-33{% endif %} {% if not loop.last and not loop.first%}mx-2{% endif %} {% if row.list|length==2 and loop.first %}mr-2{% elseif row.list|length==2 and loop.last %}ml-2{% endif %}">
+                                            {% for button in item.buttons %}
+                                                {% if button.content.file %}
+                                                    <a href="{{ button.content.file.url }}" class="p-3 mb-2 button w-100 d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
+                                                {% elseif button.content.link %}
+                                                    <a href="{{ button.content.link.url }}" class="p-3 mb-2 button w-100 d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
+                                                {% else %}
+                                                    <a href="#" class="">{{ button.label }}</a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="product-menu-down d-flex d-md-none flex-column my-5">
+                            {% for item in row.list %}
+                                <div class="product-menu-item w-100 d-flex flex-column my-5">
+                                    <img src="{{ item.image.url }}" alt="{{ item.image.alt }}" class="product-menu-image mx-auto w-100">
+                                    <div class="text-container">
+                                        <div class="title my-3">{{ item.title }}</div>
+                                        <div class="subtitle my-3">{{ item.subtitle }}</div>
+                                    </div>
+                                    <div class="buttons d-flex flex-column w-100 {% if row.list|length<=2 %}w-md-50{% else %}w-md-33{% endif %} {% if not loop.last and not loop.first%}mx-2{% endif %} {% if row.list|length==2 and loop.first %}mr-2{% elseif row.list|length==2 and loop.last %}ml-2{% endif %}">
+                                        {% for button in item.buttons %}
+                                            {% if button.content.file %}
+                                                <a href="{{ button.content.file.url }}" class="p-3 mb-2 button w-100 d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
+                                            {% elseif button.content.link %}
+                                                <a href="{{ button.content.link.url }}" class="p-3 mb-2 button w-100 d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
+                                            {% else %}
+                                                <a href="#" class="">{{ button.label }}</a>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {# Block separator #}
+                    {% if row.acf_fc_layout == "separator" %}
+                        <div class="separator w-100 pt-4 mb-4"></div>
+                    {% endif %}
+
+                    {# Block image link file #}
+                    {% if row.acf_fc_layout == "image_link_file" %}
+                        <div class="image-link-file d-flex my-5">
+                            {% for element in row.card %}
+                            <a class="w-100 text-center book-item {% if loop.first and row.card|length > 1 %}mr-2{% elseif loop.last and row.card|length > 1 %}ml-2{% elseif row.card|length > 1 %}mx-2{% endif %}" href="{% if element.content.file %}{{ element.content.file.url }}{% elseif element.content.link.url %}{{ element.content.link.url }}{% else %}#{% endif %}" target="_blank">
+                                <img src="{{ element.image.url }}" alt="{{ element.image.alt }}" class="w-100">
+                            </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {# Block books content #}
+                    {% if row.acf_fc_layout == "books_content" %}
+                        <div class="books-content d-flex flex-column my-5">
+                            <h2 class="books-content-title mb-4">{{ __('Mapa del contenido', 'macmillan') }}</h2>
+                            <div class="books-content-row content-map d-flex justify-content-between">
+                                {% for content in row.content_map %}
+                                    <a class="w-100 book-item {% if loop.first and row.content_map|length > 1 %}mr-2{% elseif loop.last and row.content_map|length > 1 %}ml-2{% elseif row.content_map|length > 1 %}mx-2{% endif %}" href="{% if content.content.file %}{{ content.content.file.url }}{% elseif content.content.link.url %}{{ content.content.link.url }}{% else %}#{% endif %}" target="_blank">{% if content.image %}<img class="w-100" src="{{ content.image.url }}">{% endif %}</a>
+                                {% endfor %}
+                            </div>
+                            <h2 class="books-content-title mt-5 mb-4">{{ __('Libro del alumno', 'macmillan') }}</h2>
+                            <div class="books-content-row students-book d-flex justify-content-between">
+                                {% for content in row.students_book %}
+                                    <a class="w-100 book-item {% if loop.first and row.students_book|length > 1 %}mr-2{% elseif loop.last and row.students_book|length > 1 %}ml-2{% elseif row.students_book|length > 1 %}mx-2{% endif %}" href="{% if content.content.file %}{{ content.content.file.url }}{% elseif content.content.link.url %}{{ content.content.link.url }}{% else %}#{% endif %}" target="_blank">{% if content.image %}<img class="w-100" src="{{ content.image.url }}">{% endif %}</a>
+                                {% endfor %}
+                            </div>
+                            <h2 class="books-content-title mt-5 mb-4">{{ __('Libro de actividad', 'macmillan') }}</h2>
+                            <div class="books-content-row activity-book d-flex justify-content-between">
+                                {% for content in row.activity_book %}
+                                    <a class="w-100 book-item {% if loop.first and row.activity_book|length > 1 %}mr-2{% elseif loop.last and row.activity_book|length > 1 %}ml-2{% else %}mx-2{% endif %}" href="{% if content.content.file %}{{ content.content.file.url }}{% elseif content.content.link.url %}{{ content.content.link.url }}{% else %}#{% endif %}" target="_blank">{% if content.image %}<img class="w-100" src="{{ content.image.url }}">{% endif %}</a>
+                                {% endfor %}
+                            </div>
+                            <h2 class="books-content-title mt-5 mb-4">{{ __('CD de clase', 'macmillan') }}</h2>
+                            <div class="books-content-row cd-class d-flex justify-content-between">
+                                {% for content in row.cd_class %}
+                                    <a class="w-100 book-item {% if loop.first and row.cd_class|length > 1 %}mr-2{% elseif loop.last and row.cd_class|length > 1 %}ml-2{% elseif row.cd_class|length > 1 %}mx-2{% endif %}" href="{% if content.content.file %}{{ content.content.file.url }}{% elseif content.content.link.url %}{{ content.content.link.url }}{% else %}#{% endif %}" target="_blank">{% if content.image %}<img class="w-100" src="{{ content.image.url }}">{% endif %}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+
                     {% endif %}
 
                 {% endfor %}
@@ -81,22 +206,22 @@
         {% endfor %}
     </div>
     {% if acf.custom_product_content.navigation and navigation %}
-        <div class="container">
+        <div class="container d-none d-md-block">
             <div class="navigation d-flex justify-content-between py-5">
-                <a href="{{ navigation.previous.guid }}" class="previous d-flex w-100">
+                <a href="{{ navigation.previous.guid }}" class="previous d-flex w-50">
                     <div class="thumbnail position-relative" style="background-image: url('{{ navigation.previous.thumbnail }}'); background-position: center; background-size: cover;">
                         <div class="filter d-flex w-100 h-100">
                             <span class="icon m-auto icon-left-open"></span>
                         </div>
                     </div>
                     <div class="text-content d-flex justify-content-center flex-column p-5 text-left mr-2">
-                        <span class="navigation-btn">Anterior</span>
+                        <span class="navigation-btn">{{ __('Anterior','macmillan') }}</span>
                         <span class="navigation-title">{{ navigation.previous.post_title }}</span>
                     </div>
                 </a>
-                <a href="{{ navigation.next.guid }}" class="next d-flex w-100">
+                <a href="{{ navigation.next.guid }}" class="next d-flex w-50">
                     <div class="text-content d-flex justify-content-center flex-column p-5 text-right ml-2">
-                        <span class="navigation-btn">Siguiente</span>
+                        <span class="navigation-btn">{{ __('Siguiente','macmillan') }}</span>
                         <span class="navigation-title">{{ navigation.next.post_title }}</span>
                     </div>
                     <div class="thumbnail position-relative" style="background-image: url('{{ navigation.next.thumbnail }}'); background-position: center; background-size: cover;">
@@ -107,7 +232,25 @@
                 </a>
             </div>
         </div>
+        <div class="navigation navigation-responsive d-flex d-md-none justify-content-between py-3">
+            <a href="{{ navigation.previous.guid }}" class="previous d-flex w-50">
+                <div class="text-content d-flex justify-content-center flex-column p-5 text-left mr-2">
+                    <span class="navigation-btn">{{ __('Anterior','macmillan') }}</span>
+                    <span class="navigation-title">{{ navigation.previous.post_title }}</span>
+                </div>
+            </a>
+            <a href="{{ navigation.next.guid }}" class="next d-flex w-50">
+                <div class="text-content d-flex justify-content-center flex-column p-5 text-right ml-2">
+                    <span class="navigation-btn">{{ __('Siguiente','macmillan') }}</span>
+                    <span class="navigation-title">{{ navigation.next.post_title }}</span>
+                </div>
+            </a>
+        </div>
 
 
     {% endif %}
+{% endblock %}
+
+{% block include_footer %}
+    <script src="{{ site.theme.link }}/assets/scripts/swiper.min.js"></script>
 {% endblock %}

@@ -1,5 +1,17 @@
 @charset "UTF-8";
 .page-template-product{
+  .tabs-responsive{
+    background-color: $black-l;
+    .tab-name{
+      cursor: grab;
+      background-color: $white-d;
+      color: $grey-d;
+      &.active{
+        background-color: $grey-d;
+        color: $white-d;
+      }
+    }
+  }
   .content a{
     font-family: $raleway;
     font-weight: $fsemi-bold;
@@ -12,11 +24,11 @@
     }
     .tab-name{
       cursor: pointer;
-      border-top: 1px solid $grey-d;
-      text-transform: uppercase;
-      &:last-of-type{
-        border-bottom: 1px solid $grey-d;
+      border-bottom: 1px solid $grey-d;
+      &:first-of-type{
+        border-top: 1px solid $grey-d;
       }
+      text-transform: uppercase;
     }
     .isbn{
       font: $fbold 15px $osans;
@@ -54,7 +66,7 @@
       overflow: auto;
       .author{
         float: left;
-        background-color: $grey-l;
+        background-color: $white-d;
         img{
           width: 150px;
           height: 150px;
@@ -75,6 +87,9 @@
     border-top: 2px solid $grey-l;
     a{
       color: $black;
+      &:hover{
+        color: $grey-d !important;
+      }
       text-transform: uppercase;
       &:hover{
         text-decoration: none;
@@ -94,7 +109,7 @@
     }
     .text-content{
       flex: 1;
-      background-color: $grey-l;
+      background-color: $white-d;
       .navigation-btn{
         font: $fmedium 14px $raleway;
       }

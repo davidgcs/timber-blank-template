@@ -109,6 +109,11 @@ h5{
 .mw-25{max-width: 25%}
 
 .w-33{width: 33.33333%}
+.w-md-33{
+  @include media-breakpoint-up(md) {
+    width: 33.33333%!important;
+  }
+}
 
 .wpml-ls-statics-footer{display: none;}
 

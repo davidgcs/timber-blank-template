@@ -141,7 +141,7 @@
 .icons{
   text-align: center;
   .icon-card{
-    background-color: $grey-l;
+    background-color: $white-d;
     .icon{
       color: $red;
       font-size: 45px;
@@ -150,5 +150,49 @@
   .icon-title{
     font: $fbold 15px $raleway;
     color: $black;
+  }
+}
+.books-content{
+  .books-content-title{
+    font: $fmedium 22px $raleway;
+    text-transform: uppercase;
+  }
+  .books-content-row{
+    .book-item{
+      border: 1px solid $black;
+      img{
+        max-height: 200px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+.separator{
+  border-bottom: 2px solid $grey-l;
+}
+.product-menu-down{
+  .product-menu-image{
+    object-fit: cover;
+    max-height: 350px;
+  }
+  .title{
+    font: $fbold 22px $raleway;
+    text-transform: uppercase;
+  }
+  .button{
+    background-color: $white-d;
+    border: 2px solid $grey-l;
+    &.white{
+      background-color: $white !important;
+    }
+  }
+  a{
+    color: $grey-d !important;
+    &:hover{ color: $grey !important; }
+    text-transform: uppercase;
+    font: $fextra-bold 14px $raleway !important;
+    .icon{
+      font-size: 18px;
+    }
   }
 }

@@ -6833,6 +6833,10 @@ h5 {
 .w-33 {
   width: 33.33333%; }
 
+@media (min-width: 768px) {
+  .w-md-33 {
+    width: 33.33333% !important; } }
+
 .wpml-ls-statics-footer {
   display: none; }
 
@@ -7065,7 +7069,7 @@ footer ul {
 .icons {
   text-align: center; }
   .icons .icon-card {
-    background-color: #E5E8ED; }
+    background-color: #F6F7FA; }
     .icons .icon-card .icon {
       color: #C40C0C;
       font-size: 45px; }
@@ -7073,6 +7077,47 @@ footer ul {
     font: 700 15px "Raleway", sans-serif;
     color: #000; }
 
+.books-content .books-content-title {
+  font: 500 22px "Raleway", sans-serif;
+  text-transform: uppercase; }
+.books-content .books-content-row .book-item {
+  border: 1px solid #000; }
+  .books-content .books-content-row .book-item img {
+    max-height: 200px;
+    object-fit: cover; }
+
+.separator {
+  border-bottom: 2px solid #E5E8ED; }
+
+.product-menu-down .product-menu-image {
+  object-fit: cover;
+  max-height: 350px; }
+.product-menu-down .title {
+  font: 700 22px "Raleway", sans-serif;
+  text-transform: uppercase; }
+.product-menu-down .button {
+  background-color: #F6F7FA;
+  border: 2px solid #E5E8ED; }
+  .product-menu-down .button.white {
+    background-color: #FFF !important; }
+.product-menu-down a {
+  color: #6D6F79 !important;
+  text-transform: uppercase;
+  font: 800 14px "Raleway", sans-serif !important; }
+  .product-menu-down a:hover {
+    color: #A2A2AA !important; }
+  .product-menu-down a .icon {
+    font-size: 18px; }
+
+.page-template-product .tabs-responsive {
+  background-color: #343435; }
+  .page-template-product .tabs-responsive .tab-name {
+    cursor: grab;
+    background-color: #F6F7FA;
+    color: #6D6F79; }
+    .page-template-product .tabs-responsive .tab-name.active {
+      background-color: #6D6F79;
+      color: #F6F7FA; }
 .page-template-product .content a {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
@@ -7083,10 +7128,10 @@ footer ul {
     max-width: 100%; }
   .page-template-product .sidebar-product .tab-name {
     cursor: pointer;
-    border-top: 1px solid #6D6F79;
+    border-bottom: 1px solid #6D6F79;
     text-transform: uppercase; }
-    .page-template-product .sidebar-product .tab-name:last-of-type {
-      border-bottom: 1px solid #6D6F79; }
+    .page-template-product .sidebar-product .tab-name:first-of-type {
+      border-top: 1px solid #6D6F79; }
   .page-template-product .sidebar-product .isbn {
     font: 700 15px "Open Sans", sans-serif; }
   .page-template-product .sidebar-product .file-btn {
@@ -7116,7 +7161,7 @@ footer ul {
     overflow: auto; }
     .page-template-product .content .author-container .author {
       float: left;
-      background-color: #E5E8ED; }
+      background-color: #F6F7FA; }
       .page-template-product .content .author-container .author img {
         width: 150px;
         height: 150px;
@@ -7133,6 +7178,8 @@ footer ul {
     color: #000;
     text-transform: uppercase; }
     .page-template-product .navigation a:hover {
+      color: #6D6F79 !important; }
+    .page-template-product .navigation a:hover {
       text-decoration: none; }
   .page-template-product .navigation .thumbnail {
     width: 130px; }
@@ -7145,7 +7192,7 @@ footer ul {
         font-size: 45px; }
   .page-template-product .navigation .text-content {
     flex: 1;
-    background-color: #E5E8ED; }
+    background-color: #F6F7FA; }
     .page-template-product .navigation .text-content .navigation-btn {
       font: 500 14px "Raleway", sans-serif; }
     .page-template-product .navigation .text-content .navigation-title {
