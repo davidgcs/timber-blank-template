@@ -75,10 +75,16 @@
     &.size-2x4 {
       width: 50%;
       height: 500px;
+      @include media-breakpoint-down(md){
+        width: 100%;
+      }
     }
     &.size-2x2 {
       width: 50%;
       height: 250px;
+      @include media-breakpoint-down(md){
+        width: 100%;
+      }
     }
     .tooltipContainer {
       width: 100%;
@@ -97,7 +103,20 @@
     img{
       width: 100%;
       object-fit: cover;
+      height: 265px;
     }
+    @include media-breakpoint-down(md){
+      width: 100%;
+    }
+  }
+}
+.image-link-file{
+  img{
+    height: 100%;
+    object-fit: cover;
+  }
+  p{
+    margin-top: auto;
   }
 }
 .breadcrumbs{
@@ -126,12 +145,13 @@
   border-top: 2px solid $grey-l;
   border-bottom: 2px solid $grey-l;
   .icon{
-    background-color: $blue;
+    background-color: $blue-icon;
     color: $white;
     display: flex;
     width: 60px;
     height: 60px;
-    font-size: 24px;
+    font-size: 30px;
+
     &:before{
       width: 60px;
       margin: auto !important;
@@ -159,7 +179,14 @@
   }
   .books-content-row{
     .book-item{
-      border: 1px solid $black;
+      .empty-image{
+        border: 1px solid $black;
+        margin: 8px;
+        height: calc(100% - 8px);
+        .index{
+          color: $black-l !important;
+        }
+      }
       img{
         max-height: 200px;
         object-fit: cover;

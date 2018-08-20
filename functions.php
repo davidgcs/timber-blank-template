@@ -21,7 +21,7 @@ function add_to_twig($twig) {
 }
 
 function pretify($text) {
-    return strtolower(str_replace (' ', '_',  remove_accents($text)));
+    return strtolower(str_replace ("'", "",  str_replace (' ', '_',  remove_accents($text))));
 }
 
 

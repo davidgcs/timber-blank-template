@@ -1,7 +1,7 @@
 {% if menu %}
-	<ul class="p-0 mb-0">
+	<ul class="p-0 mb-0 d-flex flex-wrap justify-content-md-between justify-content-center normal-menu">
 	{% for item in menu %}
-		<li class="{{ item.classes | join(' ') }} menu-item-parent d-inline-block py-3">
+		<li class="{{ item.classes | join(' ') }} menu-item-parent d-block d-sm-inline-block py-3 m-0 text-center w-100 w-sm-auto {% if loop.first %}mr-sm-3{% elseif loop.last %}ml-sm-3{% else %}mx-sm-3{% endif %}">
             <input type="hidden" class="menu-index" value="{{ loop.index }}">
 			<a target="{{ item.target }}" href="{{ item.link }}" class="custom-header text-uppercase {% if loop.first %}pl-0 pt-3 pr-3 pb-3{% elseif loop.last %} pl-3 pt-3 pr-0 pb-3 {% else %}p-3{% endif %}">{{ item.title }}</a>
 		</li>

@@ -1,5 +1,6 @@
 <?php
-$context['menu']->header = new Timber\Menu( 'main-menu' );
+/* menus */
+$context['menu']->header = new Timber\Menu( 'main' );
 $context['menu']->elt = new Timber\Menu( 'elt-social' );
 $context['menu']->fp = new Timber\Menu( 'fp-social' );
 $context['menu']->footer_top = new Timber\Menu( 'footer-top' );

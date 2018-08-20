@@ -5,17 +5,23 @@
 {% endblock %}
 
 {% block content %}
-    <div class="w-100 d-flex d-md-none image_text_fullcenter d-flex position-relative" style="background-image: url('{{post.thumbnail.src}}');">
-        <div class="filter position-absolute w-100 h-100"></div>
+    <div id="popup" class="d-none">
+        <div class="image-container m-auto position-relative">
+            <span class="icon icon-cancel"></span>
+        </div>
+    </div>
+
+    <div class="w-100 d-flex d-md-none image_text_fullcenter d-flex position-relative" style="background-image: url('{{post.thumbnail.src}}');background-size: cover;">
+        {#<div class="filter position-absolute w-100 h-100"></div>#}
         <div class="textContainer m-auto text-center">
-            <h1 class="c-white">{{ post.title }}</h1>
+            {% if acf.custom_product_content.title %}<h1 class="c-white">{{ acf.custom_product_content.title }}</h1>{% endif %}
         </div>
     </div>
     <div class="container">
-        <div class="image_text_fullcenter d-md-flex d-none position-relative" style="background-image: url('{{post.thumbnail.src}}');">
-            <div class="filter position-absolute w-100 h-100"></div>
+        <div class="image_text_fullcenter d-md-flex d-none position-relative" style="background-image: url('{{post.thumbnail.src}}');background-size: cover;">
+            {#<div class="filter position-absolute w-100 h-100"></div>#}
             <div class="textContainer m-auto text-center">
-                <h1 class="c-white">{{ post.title }}</h1>
+                {% if acf.custom_product_content.title %}<h1 class="c-white">{{ acf.custom_product_content.title }}</h1>{% endif %}
             </div>
         </div>
         <div class="breadcrumbs py-4">
@@ -25,8 +31,21 @@
     <div class="tabs-responsive py-3 d-block d-md-none">
         <div class="swiper-container container d-flex d-md-none">
             <div class="swiper-wrapper mw-100">
+                {% set hidden_content_mobile = 'false' %}
                 {% for tab in acf.custom_product_content.section %}
-                    <div class="swiper-slide tab-name p-3 ml-3 custom-header {% if loop.first %}ml-0 active{% endif %}" id="{{ tab.tab_name|pretify }}" style="width: auto">{{ tab.tab_name }}</div>
+                    {% if not tab.for_teachers %}
+                        <div class="swiper-slide tab-name p-3 ml-3 custom-header {% if loop.first %}ml-0 active{% endif %}" id="{{ tab.tab_name|pretify }}_mobile" style="width: auto">{{ tab.tab_name }}</div>
+                    {% else %}
+                        {% set hidden_content_mobile = 'true' %}
+                    {% endif %}
+                {% endfor %}
+                {% if hidden_content_mobile == 'true' %}
+                    <div class="swiper-slide tab-parent p-3 ml-3 custom-header d-flex justify-content-between" id="for_teachers_mobile" style="width: auto">{{ __("Teacher's Material","macmillan")}} <span class="icon icon-down-open"></span></div>
+                {% endif %}
+                {% for tab in acf.custom_product_content.section %}
+                    {% if tab.for_teachers %}
+                        <div class="swiper-slide d-none for-teachers-element tab-name p-3 ml-3 custom-header {% if loop.first %}ml-0 active{% endif %}" id="{{ tab.tab_name|pretify }}_mobile" style="width: auto">{{ tab.tab_name }}</div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -34,14 +53,54 @@
 
     <div class="container d-flex py-3">
         <div class="sidebar-product d-none d-md-block mr-3 my-2">
+            {% set hidden_content_desktop = 'false' %}
             {% for tab in acf.custom_product_content.section %}
-                <div class="tab-name py-3 custom-header" id="{{ tab.tab_name|pretify }}">{{ tab.tab_name }}</div>
+                {% if not tab.for_teachers %}
+                    <div class="tab-name py-3 custom-header {% if loop.first %}active{% endif %}" id="{{ tab.tab_name|pretify }}_desktop">{{ tab.tab_name }}</div>
+                {% else %}
+                    {% set hidden_content_desktop = 'true' %}
+                {% endif %}
             {% endfor %}
-            {% if acf.custom_product_content.sidebar_image_1 %}<div class="imageContainer w-100 m-auto"><img src="{{ acf.custom_product_content.sidebar_image_1.url }}" alt="{{ acf.custom_product_content.sidebar_image_1.alt }}" class="mt-4 mb-2"></div>{% endif %}
-            {% if acf.custom_product_content.sidebar_image_2 %}<div class="imageContainer w-100 m-auto"><img src="{{ acf.custom_product_content.sidebar_image_2.url }}" alt="{{ acf.custom_product_content.sidebar_image_2.alt }}" class="mb-4 mt-2"></div>{% endif %}
-            {% if acf.custom_product_content.isbn %}<span class="isbn">ISBN: {{ acf.custom_product_content.isbn }}</span>{% endif %}
-            {% if acf.custom_product_content.button_1.link %}<a target="_blank" href="{{ acf.custom_product_content.button_1.link.url }}" class="file file-btn w-100 text-center d-block p-3 my-3"><span class="icon icon-basket mr-3"></span>{{ acf.custom_product_content.button_1.link.title }}</a>{% endif %}
-            {% if acf.custom_product_content.button_2.link %}<a target="_blank" href="{{ acf.custom_product_content.button_2.link.url }}" class="file file-btn w-100 text-center d-block p-3 my-3"><span class="icon icon-basket mr-3"></span>{{ acf.custom_product_content.button_2.link.title }}</a>{% endif %}
+            {% if hidden_content_desktop == 'true' %}
+                <div class="tab-parent py-3 custom-header d-flex justify-content-between" id="for_teachers_desktop">{{ __("Teacher's Material","macmillan")}} <span class="icon icon-down-open"></span></div>
+            {% endif %}
+            <div class="for-teachers-container">
+            {% for tab in acf.custom_product_content.section %}
+                {% if tab.for_teachers %}
+                    <div class="tab-name pl-4 py-3 for-teachers-element custom-header" id="{{ tab.tab_name|pretify }}_desktop">{{ tab.tab_name }}</div>
+                {% endif %}
+            {% endfor %}
+            </div>
+
+            {% for tab in acf.custom_product_content.section %}
+                <div class="sidebar-content sidebar-content-{{ tab.tab_name|pretify }} py-4 {% if not loop.first %}d-none{% endif %}">
+                    {% if tab.sidebar_image_1.image %}
+                        <div class="imageContainer w-100 m-auto">
+                            {% if tab.sidebar_image_1.link %}
+                                <a href="{{ tab.sidebar_image_1.link.url }}" target="{{ tab.sidebar_image_1.link.target }}">
+                            {% elseif tab.sidebar_image_1.file %}
+                                <a href="{{ tab.sidebar_image_1.file.url }}" target="_blank">
+                            {% endif %}
+                                    <img src="{{ tab.sidebar_image_1.image.url }}" alt="{{ tab.sidebar_image_1.image.alt }}" class="mt-4 mb-2">
+                            {% if tab.sidebar_image_1.link or tab.sidebar_image_1.file %}</a>{% endif %}
+                        </div>
+                    {% endif %}
+                    {% if tab.sidebar_image_2.image %}
+                        <div class="imageContainer w-100 m-auto">
+                            {% if tab.sidebar_image_2.link %}
+                                <a href="{{ tab.sidebar_image_2.link.url }}" target="{{ tab.sidebar_image_2.link.target }}">
+                            {% elseif tab.sidebar_image_2.file %}
+                                <a href="{{ tab.sidebar_image_2.file.url }}" target="_blank">
+                            {% endif %}
+                                <img src="{{ tab.sidebar_image_2.image.url }}" alt="{{ tab.sidebar_image_2.image.alt }}" class="mb-4 mt-2">
+                            {% if tab.sidebar_image_2.link or tab.sidebar_image_2.file %}</a>{% endif %}
+                        </div>
+                    {% endif %}
+                    {% if tab.isbn %}<span class="isbn">ISBN: {{ tab.isbn }}</span>{% endif %}
+                    {% if tab.button_1.link %}<a target="_blank" href="{{ tab.button_1.link.url }}" class="file file-btn w-100 text-center d-block p-3 my-3">{% if tab.button_1.icon %}<span class="btn-icon icon icon-{{ tab.button_1.icon }} mr-3" {% if tab.button_1.icon_color %}style="color: {{ tab.button_1.icon_color }};"{% endif %}>{% endif %}</span>{{ tab.button_1.link.title }}</a>{% endif %}
+                    {% if tab.button_2.link %}<a target="_blank" href="{{ tab.button_2.link.url }}" class="file file-btn w-100 text-center d-block p-3 my-3">{% if tab.button_2.icon %}<span class="btn-icon icon icon-{{ tab.button_2.icon }} mr-3" {% if tab.button_2.icon_color %}style="color: {{ tab.button_2.icon_color }};"{% endif %}>{% endif %}</span>{{ tab.button_2.link.title }}</a>{% endif %}
+                </div>
+            {% endfor %}
         </div>
         {% for tab in acf.custom_product_content.section %}
             <div class="content ml-3 content-{{ tab.tab_name|pretify }}{% if not loop.first %} d-none{% endif %} w-100">
@@ -52,7 +111,7 @@
 
                     {% if row.acf_fc_layout == "icon_text" %}
                         <div class="icon_text d-flex py-4 my-4">
-                            <span class="icon rounded-circle icon-{{ row.icon }} my-auto mr-4"></span>
+                            <span class="icon rounded-circle icon-{{ row.icon }} my-auto mr-4" style="{% if row.icon_color %}color: {{ row.icon_color }};{% endif %}{% if row.background %}background-color: {{ row.background }};{% endif %}" ></span>
                             <div class="text">{{ row.text }}</div>
                         </div>
                     {% endif %}
@@ -83,8 +142,8 @@
                         <div class="icons py-md-4 d-flex flex-md-row flex-column">
                             {% for icard in row.list %}
                                 {% if icard.link %}<a href="{{ icard.link.url }}" target="{{ icard.link.target }}" class="w-100 w-md-33 mb-4 mb-md-0">{% else %} <span class="icon-container w-100 w-md-33 mb-4 mb-md-0"> {% endif %}
-                                <div class="icon-card p-5 {% if loop.first and row.list|length > 1 %}mr-md-2{% elseif loop.last and row.list|length > 1 %}ml-md-2{% elseif row.list|length > 1 %}mx-md-2{% endif %} mb-3">
-                            <span class="icon icon-{{ icard.icon }}"></span>
+                                <div class="icon-card p-5 {% if loop.first and row.list|length > 1 %}mr-md-2{% elseif loop.last and row.list|length > 1 %}ml-md-2{% elseif row.list|length > 1 %}mx-md-2{% endif %} mb-3" {% if icard.background %}style="background-color: {{ icard.background }}"{% endif %}>
+                            <span class="icon icon-{{ icard.icon }}" style="color: {{ icard.icon_color }};"></span>
                         </div>
                                 <span class="icon-title">{{ icard.title }}</span>
                                 {% if icard.link %}</a>{% else %} </span> {% endif %}
@@ -119,9 +178,9 @@
                                         <div class="buttons d-flex flex-column w-100 {% if row.list|length<=2 %}w-md-50{% else %}w-md-33{% endif %} {% if not loop.last and not loop.first%}mx-2{% endif %} {% if row.list|length==2 and loop.first %}mr-2{% elseif row.list|length==2 and loop.last %}ml-2{% endif %}">
                                             {% for button in item.buttons %}
                                                 {% if button.content.file %}
-                                                    <a href="{{ button.content.file.url }}" class="p-3 mb-2 button w-100 d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
+                                                    <a target="_blank" href="{{ button.content.file.url }}" class="p-3 mb-2 button w-100 {% if button.content.file.type == 'image' %}fileImage{% endif %} d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
                                                 {% elseif button.content.link %}
-                                                    <a href="{{ button.content.link.url }}" class="p-3 mb-2 button w-100 d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
+                                                    <a target="{{ button.content.link.target }}" href="{{ button.content.link.url }}" class="p-3 mb-2 button w-100 d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
                                                 {% else %}
                                                     <a href="#" class="">{{ button.label }}</a>
                                                 {% endif %}
@@ -141,7 +200,7 @@
                                     <div class="buttons d-flex flex-column w-100 {% if row.list|length<=2 %}w-md-50{% else %}w-md-33{% endif %} {% if not loop.last and not loop.first%}mx-2{% endif %} {% if row.list|length==2 and loop.first %}mr-2{% elseif row.list|length==2 and loop.last %}ml-2{% endif %}">
                                         {% for button in item.buttons %}
                                             {% if button.content.file %}
-                                                <a href="{{ button.content.file.url }}" class="p-3 mb-2 button w-100 d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
+                                                <a href="{{ button.content.file.url }}" class="p-3 mb-2 button w-100 {% if button.content.file.type == 'image' %}fileImage{% endif %} d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
                                             {% elseif button.content.link %}
                                                 <a href="{{ button.content.link.url }}" class="p-3 mb-2 button w-100 d-flex justify-content-between {{ item.button_style }}"><span class="my-auto">{{ button.label }}</span>{% if item.button_style == "white" %}<span class="my-auto icon icon-right-open"></span>{% endif %}</a>
                                             {% else %}
@@ -163,40 +222,39 @@
                     {% if row.acf_fc_layout == "image_link_file" %}
                         <div class="image-link-file d-flex my-5">
                             {% for element in row.card %}
-                            <a class="w-100 text-center book-item {% if loop.first and row.card|length > 1 %}mr-2{% elseif loop.last and row.card|length > 1 %}ml-2{% elseif row.card|length > 1 %}mx-2{% endif %}" href="{% if element.content.file %}{{ element.content.file.url }}{% elseif element.content.link.url %}{{ element.content.link.url }}{% else %}#{% endif %}" target="_blank">
-                                <img src="{{ element.image.url }}" alt="{{ element.image.alt }}" class="w-100">
-                            </a>
+                                <div class="flex flex-column w-33 {% if loop.first and row.card|length > 1 %}mr-2{% elseif loop.last and row.card|length > 1 %}ml-2{% elseif row.card|length > 1 %}mx-2{% endif %}">
+                                    {% if element.content.file or element.content.link %}<a class="d-inline-block {% if element.content.file.type == 'image' %}imageFile{% endif %} w-100 text-center book-item" href="{% if element.content.file %}{{ element.content.file.url }}{% elseif element.content.link %}{{ element.content.link.url }}{% endif %}" target="_blank">{% else %}<div class="d-inline-block">{% endif %}
+                                        <img src="{{ element.image.url }}" alt="{{ element.image.alt }}" class="w-100 h-100" style="object-fit: cover;">
+                                    {% if element.content.file or element.content.link %}</a>{% else %}</div>{% endif %}
+                                    {% if element.description %}
+                                        <p class="description mt-4 text-center">{{ element.description }}</p>
+                                    {% endif %}
+                                </div>
                             {% endfor %}
                         </div>
                     {% endif %}
 
                     {# Block books content #}
                     {% if row.acf_fc_layout == "books_content" %}
-                        <div class="books-content d-flex flex-column my-5">
-                            <h2 class="books-content-title mb-4">{{ __('Mapa del contenido', 'macmillan') }}</h2>
-                            <div class="books-content-row content-map d-flex justify-content-between">
-                                {% for content in row.content_map %}
-                                    <a class="w-100 book-item {% if loop.first and row.content_map|length > 1 %}mr-2{% elseif loop.last and row.content_map|length > 1 %}ml-2{% elseif row.content_map|length > 1 %}mx-2{% endif %}" href="{% if content.content.file %}{{ content.content.file.url }}{% elseif content.content.link.url %}{{ content.content.link.url }}{% else %}#{% endif %}" target="_blank">{% if content.image %}<img class="w-100" src="{{ content.image.url }}">{% endif %}</a>
+                        <div class="books-content d-flex flex-column {% if loop.first %}mb-5{% else %}my-5{% endif %}">
+                            {% for r in row.row %}
+                            <h2 class="books-content-title {% if loop.first %}mb-4{% else %}my-4{% endif %}">{{ r.title }}</h2>
+                            <div class="books-content-row content-map d-flex justify-content-start">
+                                {% for col in r.columns %}
+                                    {% if col.content.file %}
+                                    <a class="{% if col.content.file.type == 'image' %}fileImage{% endif %} w-33 book-item {% if loop.first and row.columns|length > 1 %}mr-3{% elseif loop.last and row.columns|length > 1 %}ml-3{% elseif row.columns|length > 1 %}mx-3{% endif %}" href="{{ col.content.file.url }}" target="_blank">
+                                    {% elseif col.content.link.url %}
+                                    <a class="{% if col.content.file.type == 'image' %}fileImage{% endif %} w-33 book-item {% if loop.first and row.columns|length > 1 %}mr-3{% elseif loop.last and row.columns|length > 1 %}ml-3{% elseif row.columns|length > 1 %}mx-3{% endif %}" href="{{ col.content.link.url }}" target="_blank">
+                                    {% else %}
+                                    <div class="w-33 book-item {% if loop.first and row.columns|length > 1 %}mr-3{% elseif loop.last and row.columns|length > 1 %}ml-3{% elseif row.columns|length > 1 %}mx-3{% endif %}">
+                                    {% endif %}
+                                        {% if col.image %}<img class="w-33" src="{{ col.image.url }}">
+                                        {% else %} <div class="empty-image w-33 d-flex"><span class="index mt-auto ml-auto mr-2 mb-2">{{ loop.index }}</span></div>
+                                        {% endif %}
+                                    {% if col.content.file or col.content.link%}</a>{% else %}</div>{% endif %}
                                 {% endfor %}
                             </div>
-                            <h2 class="books-content-title mt-5 mb-4">{{ __('Libro del alumno', 'macmillan') }}</h2>
-                            <div class="books-content-row students-book d-flex justify-content-between">
-                                {% for content in row.students_book %}
-                                    <a class="w-100 book-item {% if loop.first and row.students_book|length > 1 %}mr-2{% elseif loop.last and row.students_book|length > 1 %}ml-2{% elseif row.students_book|length > 1 %}mx-2{% endif %}" href="{% if content.content.file %}{{ content.content.file.url }}{% elseif content.content.link.url %}{{ content.content.link.url }}{% else %}#{% endif %}" target="_blank">{% if content.image %}<img class="w-100" src="{{ content.image.url }}">{% endif %}</a>
-                                {% endfor %}
-                            </div>
-                            <h2 class="books-content-title mt-5 mb-4">{{ __('Libro de actividad', 'macmillan') }}</h2>
-                            <div class="books-content-row activity-book d-flex justify-content-between">
-                                {% for content in row.activity_book %}
-                                    <a class="w-100 book-item {% if loop.first and row.activity_book|length > 1 %}mr-2{% elseif loop.last and row.activity_book|length > 1 %}ml-2{% else %}mx-2{% endif %}" href="{% if content.content.file %}{{ content.content.file.url }}{% elseif content.content.link.url %}{{ content.content.link.url }}{% else %}#{% endif %}" target="_blank">{% if content.image %}<img class="w-100" src="{{ content.image.url }}">{% endif %}</a>
-                                {% endfor %}
-                            </div>
-                            <h2 class="books-content-title mt-5 mb-4">{{ __('CD de clase', 'macmillan') }}</h2>
-                            <div class="books-content-row cd-class d-flex justify-content-between">
-                                {% for content in row.cd_class %}
-                                    <a class="w-100 book-item {% if loop.first and row.cd_class|length > 1 %}mr-2{% elseif loop.last and row.cd_class|length > 1 %}ml-2{% elseif row.cd_class|length > 1 %}mx-2{% endif %}" href="{% if content.content.file %}{{ content.content.file.url }}{% elseif content.content.link.url %}{{ content.content.link.url }}{% else %}#{% endif %}" target="_blank">{% if content.image %}<img class="w-100" src="{{ content.image.url }}">{% endif %}</a>
-                                {% endfor %}
-                            </div>
+                            {% endfor %}
                         </div>
 
                     {% endif %}

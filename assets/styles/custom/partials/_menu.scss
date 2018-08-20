@@ -8,9 +8,29 @@
     }
   }
 }
+
+.normal-menu{
+  .menu-item{
+    @include media-breakpoint-down(sm){
+      display: block;
+      margin: 0;
+      width: 100%;
+      text-align: center;
+    }
+    a{
+      @include media-breakpoint-down(sm) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100%;
+      }
+    }
+  }
+}
+
 .submenu{
   left: 0;
   z-index: 99;
+  top: 100%;
   a{
     &.submenu-parent{
       text-align: center;

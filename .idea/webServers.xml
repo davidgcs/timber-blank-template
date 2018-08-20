@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="33d4e90c-137b-4c11-aeda-8f01905ce675" name="macmillan theme" url="http://195.114.210.137">
+        <fileTransfer host="195.114.210.137" port="21" rootFolder="/macmillan.enpruebas.net/wp-content/themes/macmillan">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

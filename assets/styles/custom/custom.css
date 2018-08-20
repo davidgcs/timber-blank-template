@@ -6837,8 +6837,36 @@ h5 {
   .w-md-33 {
     width: 33.33333% !important; } }
 
+@media (min-width: 576px) {
+  .w-sm-auto {
+    width: auto !important; } }
+
 .wpml-ls-statics-footer {
   display: none; }
+
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5); }
+  #popup .image-container .icon {
+    cursor: pointer;
+    color: #FFF;
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 4%; }
+  #popup .image-container img {
+    max-width: 100%;
+    padding: 4%; }
+
+a img:hover {
+  opacity: 0.6; }
 
 /* Partials */
 header .wrapper {
@@ -6911,9 +6939,21 @@ header .wrapper {
 header #menu #nav-main .menu-item:hover, header #menu #nav-main .menu-item.hover {
   background-color: #E5E8ED;
   color: #6D6F79; }
+@media (max-width: 767.98px) {
+  header .normal-menu .menu-item {
+    display: block;
+    margin: 0;
+    width: 100%;
+    text-align: center; } }
+@media (max-width: 767.98px) {
+  header .normal-menu .menu-item a {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%; } }
 header .submenu {
   left: 0;
-  z-index: 99; }
+  z-index: 99;
+  top: 100%; }
   header .submenu a.submenu-parent {
     text-align: center;
     border-bottom: 2px solid #6D6F79;
@@ -6923,10 +6963,20 @@ footer .footer-upper {
   background-color: #A2A2AA; }
   footer .footer-upper .inner-container {
     padding: 50px 150px; }
+    @media (max-width: 991.98px) {
+      footer .footer-upper .inner-container {
+        padding: 50px 0; } }
     footer .footer-upper .inner-container .menu-icons:first-of-type {
       margin-right: 20px; }
+      @media (max-width: 991.98px) {
+        footer .footer-upper .inner-container .menu-icons:first-of-type {
+          margin-right: 0; } }
     footer .footer-upper .inner-container .menu-icons:last-of-type {
       margin-left: 20px; }
+      @media (max-width: 991.98px) {
+        footer .footer-upper .inner-container .menu-icons:last-of-type {
+          margin-left: 0;
+          margin-top: 30px; } }
     footer .footer-upper .inner-container .menu-icons .menu-title {
       border-bottom: 2px solid #FFF;
       color: #FFF; }
@@ -6962,6 +7012,31 @@ footer ul {
     footer ul li a:hover {
       text-decoration: none;
       color: rgba(255, 255, 255, 0.6) !important; }
+
+#menu #nav-main .menu-item:hover, #menu #nav-main .menu-item.hover {
+  background-color: #E5E8ED;
+  color: #6D6F79; }
+
+@media (max-width: 767.98px) {
+  .normal-menu .menu-item {
+    display: block;
+    margin: 0;
+    width: 100%;
+    text-align: center; } }
+@media (max-width: 767.98px) {
+  .normal-menu .menu-item a {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%; } }
+
+.submenu {
+  left: 0;
+  z-index: 99;
+  top: 100%; }
+  .submenu a.submenu-parent {
+    text-align: center;
+    border-bottom: 2px solid #6D6F79;
+    width: 100%; }
 
 .image_text_fullcenter {
   width: 100%;
@@ -7020,9 +7095,15 @@ footer ul {
     .image_text_tooltip .custom-card.size-2x4 {
       width: 50%;
       height: 500px; }
+      @media (max-width: 991.98px) {
+        .image_text_tooltip .custom-card.size-2x4 {
+          width: 100%; } }
     .image_text_tooltip .custom-card.size-2x2 {
       width: 50%;
       height: 250px; }
+      @media (max-width: 991.98px) {
+        .image_text_tooltip .custom-card.size-2x2 {
+          width: 100%; } }
     .image_text_tooltip .custom-card .tooltipContainer {
       width: 100%;
       height: 100%;
@@ -7034,7 +7115,17 @@ footer ul {
 
 .image_text_down .custom-block img {
   width: 100%;
+  object-fit: cover;
+  height: 265px; }
+@media (max-width: 991.98px) {
+  .image_text_down .custom-block {
+    width: 100%; } }
+
+.image-link-file img {
+  height: 100%;
   object-fit: cover; }
+.image-link-file p {
+  margin-top: auto; }
 
 .breadcrumbs a {
   color: #6D6F79; }
@@ -7056,12 +7147,12 @@ footer ul {
   border-top: 2px solid #E5E8ED;
   border-bottom: 2px solid #E5E8ED; }
   .icon_text .icon {
-    background-color: #007bff;
+    background-color: #7182b8;
     color: #FFF;
     display: flex;
     width: 60px;
     height: 60px;
-    font-size: 24px; }
+    font-size: 30px; }
     .icon_text .icon:before {
       width: 60px;
       margin: auto !important; }
@@ -7080,11 +7171,15 @@ footer ul {
 .books-content .books-content-title {
   font: 500 22px "Raleway", sans-serif;
   text-transform: uppercase; }
-.books-content .books-content-row .book-item {
-  border: 1px solid #000; }
-  .books-content .books-content-row .book-item img {
-    max-height: 200px;
-    object-fit: cover; }
+.books-content .books-content-row .book-item .empty-image {
+  border: 1px solid #000;
+  margin: 8px;
+  height: calc(100% - 8px); }
+  .books-content .books-content-row .book-item .empty-image .index {
+    color: #343435 !important; }
+.books-content .books-content-row .book-item img {
+  max-height: 200px;
+  object-fit: cover; }
 
 .separator {
   border-bottom: 2px solid #E5E8ED; }
@@ -7109,6 +7204,8 @@ footer ul {
   .product-menu-down a .icon {
     font-size: 18px; }
 
+.page-template-product .btn-icon {
+  font-size: 22px; }
 .page-template-product .tabs-responsive {
   background-color: #343435; }
   .page-template-product .tabs-responsive .tab-name {
@@ -7126,12 +7223,26 @@ footer ul {
   width: 30%; }
   .page-template-product .sidebar-product img {
     max-width: 100%; }
+  .page-template-product .sidebar-product .for-teachers-container .tab-name {
+    border-top: none !important; }
   .page-template-product .sidebar-product .tab-name {
     cursor: pointer;
     border-bottom: 1px solid #6D6F79;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    color: #A2A2AA; }
+    .page-template-product .sidebar-product .tab-name.active, .page-template-product .sidebar-product .tab-name:hover {
+      color: #000; }
     .page-template-product .sidebar-product .tab-name:first-of-type {
       border-top: 1px solid #6D6F79; }
+  .page-template-product .sidebar-product .tab-parent {
+    cursor: pointer;
+    border-bottom: 1px solid #6D6F79;
+    text-transform: uppercase;
+    color: #A2A2AA; }
+    .page-template-product .sidebar-product .tab-parent:hover {
+      color: #000; }
+  .page-template-product .sidebar-product .for-teachers-container {
+    display: none; }
   .page-template-product .sidebar-product .isbn {
     font: 700 15px "Open Sans", sans-serif; }
   .page-template-product .sidebar-product .file-btn {
@@ -7146,16 +7257,19 @@ footer ul {
   .page-template-product .content ul {
     padding-left: 0; }
     .page-template-product .content ul li {
+      position: relative;
       list-style: none;
-      margin-left: 0;
       padding-left: 0;
-      margin-top: 8px;
-      margin-bottom: 8px; }
+      margin-top: 12px;
+      margin-bottom: 12px;
+      margin-left: 10px; }
       .page-template-product .content ul li:before {
         display: inline;
         content: '•';
         color: #C40C0C;
-        margin-right: 6px; }
+        margin-right: 6px;
+        position: absolute;
+        left: -10px; }
   .page-template-product .content .author-container {
     height: auto;
     overflow: auto; }

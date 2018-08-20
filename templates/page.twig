@@ -1,13 +1,25 @@
 {% extends "base.twig" %}
 
 {% block content %}
+    <div id="popup" class="d-none">
+        <div class="image-container m-auto position-relative">
+            <span class="icon icon-cancel"></span>
+        </div>
+    </div>
+
+    <div class="w-100 d-flex d-md-none image_text_fullcenter d-flex position-relative" style="background-image: url('{{post.thumbnail.src}}');background-size: cover;">
+        {#<div class="filter position-absolute w-100 h-100"></div>#}
+        <div class="textContainer m-auto text-center">
+            <h1 class="c-white">{{ post.title }}</h1>
+        </div>
+    </div>
     <div class="container overflow-x-hidden">
         {% for row in acf.custom_page_content %}
 
             {# Block image_text_fullcenter #}
             {% if row.acf_fc_layout == "image_text_fullcenter" %}
-                <div class="image_text_fullcenter d-flex position-relative {% if loop.first %}mb-5{% else %}my-5{% endif %}" style="background-image: url('{{row.image.url}}');">
-                    <div class="filter position-absolute w-100 h-100"></div>
+                <div class="image_text_fullcenter position-relative {% if loop.first %}mb-3 image-header d-none d-md-flex{% else %}my-5 d-flex{% endif %}" style="background-image: url('{{row.image.url}}');background-size: cover;">
+                    {#<div class="filter position-absolute w-100 h-100"></div>#}
                     <div class="textContainer m-auto text-center">
                         {% if row.pre_title %}<div class="pre-title">{{ row.pre_title }}</div>{% endif %}
                         <h1 class="{% if row.pre_title %}title{% else %}title-strong{% endif %} c-white">{{ row.title }}</h1>
@@ -18,7 +30,7 @@
 
             {# Block breadcrumbs #}
             {% if row.acf_fc_layout == "breadcrumbs" %}
-                <div class="breadcrumbs">
+                <div class="breadcrumbs my-4 my-md-0">
                     {{ function('do_shortcode', '[wpseo_breadcrumb]') }}
                 </div>
             {% endif %}
@@ -27,9 +39,9 @@
             {% if row.acf_fc_layout == "image_text_tooltip" %}
                 <div class="image_text_tooltip w-100 h-auto my-5">
                     {% for c in row.card %}
-                        <div class="custom-card position-relative p-2 size-{{c.size}}">
+                        <div class="custom-card position-relative py-2 px-md-2 px-0 size-{{c.size}}">
                             {% if c.link %}<a href="{{ c.link.url }}" target="{{ c.link.target }}">{% endif %}
-                                <div class="tooltipContainer d-flex" style="background-image: url('{{c.image.url}}');">
+                                <div class="tooltipContainer d-flex" style="background-image: url('{{c.image.url}}');background-size: cover;">
                                     <div class="tooltip position-relative mr-auto my-auto ml-5 p-4 mw-50">
                                         <h3 class="title">{{ c.title }}</h3>
                                         <p class="description">{{ c.description }}</p>
@@ -43,9 +55,9 @@
 
             {# Block image_text_down #}
             {% if row.acf_fc_layout == "image_text_down" %}
-                <div class="image_text_down w-100 h-auto my-5 d-flex">
+                <div class="image_text_down w-100 h-auto my-5 d-flex flex-md-row flex-column">
                     {% for i in row.block %}
-                        <div class="custom-block position-relative w-33 {% if row.block|length <3 %}pr-2{% elseif loop.index != 3 %}mr-2{% endif %}">
+                        <div class="custom-block position-relative w-33 {% if row.block|length <3 %}pr-4{% elseif loop.index != 3 %}mr-4{% endif %}">
                             {% if i.link %}<a href="{{ i.link.url }}" target="{{ i.link.target }}">{% endif %}
                             <img src="{{ i.image.url }}" alt="{{ i.image.alt }}" class="w-100">
                             <div class="textContainer position-relative py-4">
@@ -112,8 +124,8 @@
                 <div class="icons py-4 d-flex">
                     {% for icard in row.list %}
                     {% if icard.link %}<a href="{{ icard.link.url }}" target="{{ icard.link.target }}" class="w-25">{% else %} <span class="icon-container w-25"> {% endif %}
-                        <div class="icon-card p-5 mx-1 mb-3">
-                            <span class="icon icon-{{ icard.icon }}"></span>
+                        <div class="icon-card p-5 mx-1 mb-3" {% if icard.background %}style="background-color: {{ icard.background }}"{% endif %}>
+                            <span class="icon icon-{{ icard.icon }}" {% if icard.icon_color %}style="color: {{ icard.icon_color }};"{% endif %}></span>
                         </div>
                         <span class="icon-title">{{ icard.title }}</span>
                     {% if icard.link %}</a>{% else %} </span> {% endif %}

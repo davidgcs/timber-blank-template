@@ -3,13 +3,22 @@ footer{
     background-color: $grey;
     .inner-container{
       padding: 50px 150px;
-
+      @include media-breakpoint-down(md) {
+        padding: 50px 0;
+      }
       .menu-icons{
         &:first-of-type{
           margin-right: 20px;
+          @include media-breakpoint-down(md) {
+            margin-right: 0;
+          }
         }
         &:last-of-type{
           margin-left: 20px;
+          @include media-breakpoint-down(md) {
+            margin-left: 0;
+            margin-top: 30px;
+          }
         }
         .menu-title{
           border-bottom: 2px solid $white;
